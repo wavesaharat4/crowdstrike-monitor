@@ -23,7 +23,7 @@ export async function fetchCrowdStrikeAlerts(): Promise<CrowdStrikeAlert[]> {
         // 1: ค้นหา ID ของ Alert 
         const queryResponse = await axios.get(`${process.env.CS_BASE_URL}/alerts/queries/alerts/v2`, {
             headers: { 'Authorization': `Bearer ${token}` },
-            params: { filter: "severity:>=60", limit: 1 }
+            params: { filter: "severity:>=60", limit: 5 }
         });
 
         const alertIds = queryResponse.data.resources;

@@ -40,7 +40,7 @@ export async function processAlerts() {
                 // 2. ใส่เบรกก่อนเรียก Gemini (เช่น หน่วงไว้ 3 วินาที หรือ 3000 ms)
                 // เพื่อไม่ให้ API ฟรีของ Google โดนยิงรัวเกินไป
                 if (newAlertsCount > 1) {
-                    console.log(`       ⏳ หยุดพัก 3 วินาที ป้องกัน AI โควตาเต็ม...`);
+                    console.log(`        พัก 3 วินาที ป้องกัน AI โควตาเต็ม...`);
                     await delay(3000); 
                 }
                 console.log(`       เครื่องที่พบ: ${alert.hostname}`);
