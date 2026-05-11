@@ -2,12 +2,15 @@ import { fetchCrowdStrikeAlerts } from '@/lib/services/crowdstrike';
 import { processAlerts } from '@/lib/jobs/alertJob';
 import { revalidatePath } from 'next/cache';
 import TriggerButton from './components/TriggerButton';
-
+import { pool } from '@/lib/db';
 export const dynamic = 'force-dynamic';
 
 export default async function DashboardPage() {
-  const allAlerts = await fetchCrowdStrikeAlerts();
-
+  //อ่านจาก DB ไม่ไปยิง CrowdStrike API
+  const result = await pool.query(
+    `SELECT * FROM "AlertRecord" ORDER BY timestamp DESC`
+  );
+  const allAlerts = result.rows;
   async function runManualCheck() {
     'use server';
     console.log("Manual check triggered by user");
