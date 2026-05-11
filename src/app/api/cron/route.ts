@@ -6,6 +6,9 @@ export async function GET(request: Request) {
     // 1. ดึงค่า Header ที่ Vercel ส่งมาให้
     const authHeader = request.headers.get('authorization');
 
+    // 👇 เพิ่ม 2 บรรทัดนี้ เพื่อแอบดูข้อมูล
+    console.log("🕵️‍♂️ Header ที่ฝั่ง Vercel ได้รับ:", authHeader);
+    console.log("🔐 รหัสใน Vercel (CRON_SECRET):", process.env.CRON_SECRET ? "ถูกตั้งค่าแล้ว" : "ยังเป็นค่าว่าง (undefined)");
     // 2. ตรวจสอบว่าตรงกับ CRON_SECRET ในไฟล์ .env หรือบนเว็บ Vercel ไหม
     // Vercel จะส่งมาในรูปแบบ "Bearer รหัสผ่าน"
     if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
