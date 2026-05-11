@@ -1,26 +1,27 @@
 import { NextResponse } from 'next/server';
-// เปลี่ยน path ให้ตรงกับที่เก็บไฟล์ processAlerts ของคุณ
-import { processAlerts } from '@/lib/jobs/alertJob'; 
+import { processAlerts } from '@/lib/jobs/alertJob';
 
-// บังคับให้ Next.js ไม่จำ Cache ของหน้านี้ (ให้รันใหม่ทุกครั้งที่ถูกเรียก)
-export const dynamic = 'force-dynamic';
-
+// Vercel Cron จะส่ง Request มาเป็นแบบ GET
 export async function GET(request: Request) {
-    try {
-        console.log("ได้รับสัญญาณCron Job");
-        
-        // สั่งให้ลอจิกดึงข้อมูล CrowdStrike และส่ง Teams/Email ทำงาน
-        await processAlerts();
+    // 1. ดึงค่า Header ที่ Vercel ส่งมาให้
+    const authHeader = request.headers.get('authorization');
 
-        return NextResponse.json({ 
-            success: true, 
-            message: 'ระบบตรวจสอบ Alert ทำงานเสร็จสิ้น' 
-        });
+    // 2. ตรวจสอบว่าตรงกับ CRON_SECRET ในไฟล์ .env หรือบนเว็บ Vercel ไหม
+    // Vercel จะส่งมาในรูปแบบ "Bearer รหัสผ่าน"
+    if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+        console.warn('มีการพยายามเรียกใช้ Cron Job โดยไม่ได้รับอนุญาต');
+        return new NextResponse('Unauthorized', { status: 401 });
+    }
+
+    try {
+        console.log('ยืนยันรหัสผ่าน Cron Job ถูกต้อง กำลังเริ่มทำงาน...');
+        
+        // 3. สั่งให้ระบบทำงานจริง
+        await processAlerts();
+        
+        return NextResponse.json({ success: true, message: 'Cron job executed successfully' });
     } catch (error) {
-        console.error('API Error:', error);
-        return NextResponse.json({ 
-            success: false, 
-            error: 'เกิดข้อผิดพลาดในการตรวจสอบ Alert' 
-        }, { status: 500 });
+        console.error('❌ Cron job error:', error);
+        return NextResponse.json({ success: false, message: 'Internal Server Error' }, { status: 500 });
     }
 }
