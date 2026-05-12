@@ -105,7 +105,7 @@ export default async function DashboardPage() {
               <div className="p-5 flex flex-col gap-3">
                 {allAlerts.map((alert) => (
                   <div
-                    key={alert.detection_id}
+                    key={alert.detection_id || alert.id }
                     className="bg-red-500/[0.045] border border-red-500/[0.15] border-l-[3px] border-l-red-500 rounded-xl p-5 grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4"
                   >
                     {/* Timestamp */}

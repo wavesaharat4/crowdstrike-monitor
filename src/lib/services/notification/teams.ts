@@ -26,7 +26,7 @@ export async function sendToTeams(alert: any, aiResponse: any) {
       {
         // ใช้ประโยคสรุปที่ AI แต่งให้มาโชว์เป็นหัวเรื่อง
         "activityTitle": aiResponse.short_summary || "มีการแจ้งเตือนความปลอดภัยใหม่จาก CrowdStrike",
-        "activitySubtitle": `**IP:** ${alert.ip_address || 'N/A'} | **User:** ${alert.username || 'N/A'}`,
+        "activitySubtitle": `**IP:** ${alert.ipAddress || 'N/A'} | **User:** ${alert.username || 'N/A'}`,
         "facts": [
           {
             "name": "🔍 ผลการวิเคราะห์ (AI):",
