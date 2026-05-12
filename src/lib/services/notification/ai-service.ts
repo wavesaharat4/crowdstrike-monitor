@@ -15,7 +15,8 @@ export async function getAnalysisFromExternalAI(alert: any) {
     priority: alert.severity || "High",
     status: "Open",
     policy_name: `
-    วิเคราะห์ข้อมูลนี้: IP=${alert.ipAddress}, User=${alert.username}, Desc=${alert.description}
+    วิเคราะห์ข้อมูลนี้: IP=${alert.ipAddress}, User=${alert.username}, Desc=${alert.description}, Filename=${alert.filename}
+    Tactic=${alert.tactic}, Technique=${alert.technique}
       โดยให้ตอบกลับเป็น JSON ที่มี key ดังนี้เท่านั้น:
       1. short_summary: สรุป 1-2 บรรทัด พบพฤติกรรม..."
       2. description: สรุปรายละเอียดเชิงลึกแบบสั้นและกระชับที่สุด ห้ามเกิน 2 บรรทัด (ประมาณ 30-50 คำ)
