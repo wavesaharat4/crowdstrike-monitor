@@ -3,6 +3,8 @@ import { fetchCrowdStrikeAlerts } from '../services/crowdstrike';
 // import { sendToTeams } from '../services/notification/teams';
 // import { sendNotifications } from '../services/notification/index';
 import { getAnalysisFromExternalAI } from '../services/notification/ai-service';
+import { pool } from '../../lib/db';
+import { sendNotifications } from '../services/notification/index';
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -26,18 +28,53 @@ export async function processAlerts() {
                 await delay(3000);
             }
 
-            console.log(`[NEW] ID: ${alert.id}`);
+            console.log(`[NEW] ID: ${alert.detection_id}`);
             console.log(`      เครื่อง: ${alert.hostname} | IP: ${alert.ipAddress}`);
             console.log(`      ผู้ใช้: ${alert.username} | ไฟล์: ${alert.filename}`);
             console.log(`      เวลา: ${new Date(alert.timestamp).toLocaleString()}`);
 
-            const aiResponse = await getAnalysisFromExternalAI(alert);
-
-            if (!aiResponse) {
-                console.log("--- ไม่ได้รับผลวิเคราะห์จาก AI ข้ามการส่งแจ้งเตือนนี้");
-                return false;
-            }
         }
+        const getPendingQuery = `
+                SELECT * FROM "AlertRecord" 
+                WHERE "mailStatus" = 'PENDING' 
+                ORDER BY timestamp ASC;
+            `;
+            const pendingResult = await pool.query(getPendingQuery);
+            const pendingAlerts = pendingResult.rows;
+        
+            if (pendingAlerts.length === 0) {
+                console.log(`ℹ️ ไม่มี Alert ค้างส่งในระบบรอบนี้`);
+                return;
+            }
+        
+            console.log(` พบข้อมูลที่ต้องจัดส่งจาก Database จำนวน ${pendingAlerts.length} รายการ`);
+        
+            // เริ่มวนลูปประมวลผลข้อมูลที่ได้มาจาก DB
+            for (const dbAlert of pendingAlerts) {
+                console.log(`\n---- กำลังประมวลผล Alert ID: ${dbAlert.id}`);
+                
+                // หมายเหตุสำคัญ: ตอนนี้ตัวแปร dbAlert ดึงมาจาก Database 
+                // ชื่อ Key ต่างๆ จะอิงตามชื่อ Column ใน Database นะครับ (เช่น dbAlert.ipAddress)
+                
+                // ขั้นที่ 4 & 5: โยนให้ AI -> จัด Format -> ส่ง Email/Teams
+                // ฟังก์ชัน sendNotifications จะรับช่วงต่อจัดการให้ทั้งหมด
+                const success = await sendNotifications(dbAlert);
+                
+                if (success === 'SENT' || success === 'FAIL') {
+                    // 🌟 ถ้าสถานะเป็น SENT (สำเร็จ) หรือ FAIL (ส่ง Teams ให้คนทำแมนนวลแล้ว) ให้ขีดฆ่าใน DB ได้เลย
+                    try {
+                        // เปลี่ยนมารับค่า $1 เป็นสถานะ และ $2 เป็น id
+                        const updateQuery = `UPDATE "AlertRecord" SET "mailStatus" = $1 WHERE id = $2`;
+                        await pool.query(updateQuery, [success, dbAlert.id]);
+                        console.log(`      ✅ อัปเดตสถานะ DB เป็น '${success}' เรียบร้อย`);
+                    } catch (dbError: any) {
+                        console.error(`      ❌ อัปเดตสถานะ DB ไม่สำเร็จ:`, dbError.message);
+                    }
+                } else {
+                    // กรณีเป็น PENDING หรือค่าอื่นๆ คือเมลไม่ไปและไม่ได้ส่ง Teams 
+                    console.log(`      ⚠️ ระบบเก็บสถานะไว้เป็น PENDING เพื่อดำเนินการใหม่ในรอบหน้า`);
+                }
+            }
 
     } catch (error) {
         console.error('เกิดข้อผิดพลาด:', error);

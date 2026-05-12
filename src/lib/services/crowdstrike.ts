@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import type { CrowdStrikeAlert } from '../types/alert';
 import { pool } from '@/lib/db'; //  นำเข้า Database 
 
+
 dotenv.config();
 
 // 1. ฟังก์ชันขอ Token (เหมือนเดิม)
