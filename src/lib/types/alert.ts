@@ -5,7 +5,7 @@ export interface CrowdStrikeAlert {
     severity: string;
     description: string;
     hostname: string;
-    ip_address: string;
+    ipAddress: string;
     username: string;
     filename: string;
     timestamp: string | Date;

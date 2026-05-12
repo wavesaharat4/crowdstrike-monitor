@@ -1,52 +1,52 @@
 [
   {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7cba7761b2914fe38f176e8198abb483:1341312580997-5786-46141456",
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:f0d20568fdef4f4da347eb5e6a289aec:13715365448-5315-2053515102762823882",
     "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "SMT_CENTER18N",
-    "timestamp": "2026-05-11T02:23:51.224372822Z",
-    "ip_address": "192.168.203.60",
-    "username": "Smt_Center18",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:23ebf742fdf14758a1c87d70525048d1:765557628793-5786-63973904",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "HPL-160",
-    "timestamp": "2026-05-11T02:04:15.741238371Z",
-    "ip_address": "172.28.67.64",
-    "username": "Patcharin_U",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:de641f67dc9b4bed9635f1fb1b61b801:91489654291-5786-2691344",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "F6588",
-    "timestamp": "2026-05-11T01:40:17.381446872Z",
-    "ip_address": "172.28.66.184",
-    "username": "Oorawan_C",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:2dad9f2ca1104979b8050373529aa2e1:47749718120-5786-1232912",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "F6369",
-    "timestamp": "2026-05-11T00:50:48.193905673Z",
-    "ip_address": "172.28.66.227",
-    "username": "SYSTEM",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-104",
+    "timestamp": "2026-05-10T17:00:07.107619414Z",
+    "ip_address": "172.28.66.213",
+    "username": "HPL-104$",
     "filename": "WmiApSrv.exe"
   },
   {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:f53404b47f6c43579b7e9e21ed68ed0f:3866908422416-5315-2053513062124773483",
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:82b32fc37b95457c9e3f6427232f2e08:545634952704-5315-2053515099659022455",
     "severity": "High",
     "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "LNK2200003",
-    "timestamp": "2026-05-10T17:00:11.063003071Z",
-    "ip_address": "172.17.8.49",
-    "username": "LNK2200003$",
+    "hostname": "F6483",
+    "timestamp": "2026-05-10T17:00:05.478202768Z",
+    "ip_address": "172.28.66.151",
+    "username": "F6483$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:1dc81b0f9a40482695a30e68506a8c6f:10994764665670-5315-2053519373549912217",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "ATS2300010",
+    "timestamp": "2026-05-10T17:00:00.005291859Z",
+    "ip_address": "10.10.10.1",
+    "username": "ATS2300010$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:6799905ae6c6434db593e4884b15516f:726200327141-5315-2053515102762823900",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-117",
+    "timestamp": "2026-05-10T17:00:09.802103729Z",
+    "ip_address": "172.28.67.62",
+    "username": "HPL-117$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:099aa18982474871b88ac71256beb2a6:2220839719170-5315-2053515050015240209",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "WH19200000190",
+    "timestamp": "2026-05-10T17:00:09.545173966Z",
+    "ip_address": "192.168.29.154",
+    "username": "WH19200000190$",
     "filename": "WmiApSrv.exe"
   },
   {
@@ -60,33 +60,43 @@
     "filename": "WmiApSrv.exe"
   },
   {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7377c5e95e714a6b83c8af143e401fc4:2617638258304-5315-2053515080780460109",
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:62e98cae54e847bea359e6e96e6e5158:931569161375-5315-2053514503145050200",
     "severity": "High",
     "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "LST2300004",
-    "timestamp": "2026-05-10T17:00:04.464643012Z",
-    "ip_address": "192.168.56.1",
-    "username": "LST2300004$",
+    "hostname": "NPI19200000391",
+    "timestamp": "2026-05-10T17:00:05.262153805Z",
+    "ip_address": "172.20.10.9",
+    "username": "NPI19200000391$",
     "filename": "WmiApSrv.exe"
   },
   {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:29130f47cdb549759c8bb32978afde31:1520761381655-5786-6782736",
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:23ebf742fdf14758a1c87d70525048d1:765426302129-5786-63797008",
     "severity": "High",
     "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "HPL-046",
-    "timestamp": "2026-05-11T00:38:58.73193701Z",
-    "ip_address": "172.28.66.158",
-    "username": "HPL-046$",
+    "hostname": "HPL-160",
+    "timestamp": "2026-05-11T01:48:34.728954754Z",
+    "ip_address": "172.28.67.64",
+    "username": "Patcharin_U",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:f0d20568fdef4f4da347eb5e6a289aec:15682201876-5315-2053515062094807069",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-104",
+    "timestamp": "2026-05-10T17:00:10.149961379Z",
+    "ip_address": "172.28.66.213",
+    "username": "HPL-104$",
     "filename": "WmiApSrv.exe"
   },
   {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7427512f75b240dfa5edb2422319d638:258038803236-5315-2053515124925452338",
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:02f68d39894747fcab57f56ecaf6ea03:671743141131-5315-2053512740144832616",
     "severity": "High",
     "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "F6530",
-    "timestamp": "2026-05-10T17:00:10.613397206Z",
-    "ip_address": "172.28.67.116",
-    "username": "F6530$",
+    "hostname": "HPL-023",
+    "timestamp": "2026-05-10T17:00:05.169256383Z",
+    "ip_address": "172.28.67.15",
+    "username": "HPL-023$",
     "filename": "WmiApSrv.exe"
   },
   {
@@ -100,93 +110,13 @@
     "filename": "WmiApSrv.exe"
   },
   {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:14945816d0e34c02a55ded3227f9009e:899132817154-5315-2053515080780460079",
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:cf731b9e1dbe4c498279139a45701159:1052435034320-5315-2053514155848290388",
     "severity": "High",
     "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-102",
-    "timestamp": "2026-05-10T17:00:00.88027174Z",
-    "ip_address": "172.28.66.154",
-    "username": "HPL-102$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7377c5e95e714a6b83c8af143e401fc4:2706903204688-5315-2053515099629604865",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "LST2300004",
-    "timestamp": "2026-05-10T17:00:00.533328348Z",
-    "ip_address": "192.168.56.1",
-    "username": "LST2300004$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:02f68d39894747fcab57f56ecaf6ea03:675309087677-5315-2053515131091136516",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-023",
-    "timestamp": "2026-05-10T17:00:05.892688766Z",
-    "ip_address": "172.28.67.15",
-    "username": "HPL-023$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:87f6e3b8867d47528d4a48bbbe431375:1005184827133-5315-2053512881375436967",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "PFT2300019",
-    "timestamp": "2026-05-10T16:59:58.786038486Z",
-    "ip_address": "192.168.212.13",
-    "username": "PFT2300019$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:2c6f9f6e10c448e591bdc8f45db52107:1056526961698-5315-2053512263294439502",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "PE19200000364",
-    "timestamp": "2026-05-10T16:59:57.563374996Z",
-    "ip_address": "192.168.250.48",
-    "username": "PE19200000364$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:442d61bf87fa4e2aae45ce439bb1b68b:17448224742-5315-2053515070642843841",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-128",
-    "timestamp": "2026-05-10T16:59:56.8671212Z",
-    "ip_address": "172.28.66.105",
-    "username": "HPL-128$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:099aa18982474871b88ac71256beb2a6:2246610428924-5315-2053512996249034933",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "WH19200000190",
-    "timestamp": "2026-05-10T17:00:11.770789703Z",
-    "ip_address": "192.168.29.154",
-    "username": "WH19200000190$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:278e5e1d212a4675b316ef4f3fa7b0d3:16887355727-5315-2053515110115364899",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-079",
-    "timestamp": "2026-05-10T17:00:04.70452984Z",
-    "ip_address": "172.28.66.237",
-    "username": "HPL-079$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7cd1d1dd871344cf9ea5aa4aa41bca37:1622838209406-5315-2053515087269019675",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "SVI19200000126",
-    "timestamp": "2026-05-10T17:00:03.522170102Z",
-    "ip_address": "172.20.10.3",
-    "username": "SVI19200000126$",
+    "hostname": "HPW-02",
+    "timestamp": "2026-05-10T17:00:02.564783292Z",
+    "ip_address": "172.28.67.38",
+    "username": "HPW-02$",
     "filename": "WmiApSrv.exe"
   },
   {
@@ -200,6 +130,356 @@
     "filename": "WmiApSrv.exe"
   },
   {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:1c9e73e209e44560978d02d829ba62c0:996741747256-5315-2053513388571705372",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-091",
+    "timestamp": "2026-05-10T17:00:00.88095187Z",
+    "ip_address": "172.28.66.178",
+    "username": "HPL-091$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:0e5dad1600cd4f149ecc9eb382960cfa:962334096357-5315-2053511937153720426",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-138",
+    "timestamp": "2026-05-10T17:00:00.830022041Z",
+    "ip_address": "172.28.67.94",
+    "username": "HPL-138$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:f580f0ee86c346268a9ba2e7cd9c8ec4:309697825813-5315-2053515062094807074",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-114",
+    "timestamp": "2026-05-10T17:00:10.715338598Z",
+    "ip_address": "172.28.66.166",
+    "username": "HPL-114$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:006bafcfd8dc4e5e903ae27ddacaf2a8:1106345725382-5315-2053513139149058059",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "MFG19100000135",
+    "timestamp": "2026-05-10T17:00:09.156613352Z",
+    "ip_address": "192.168.28.33",
+    "username": "MFG19100000135$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:aaef2a78b136486a9bcfa2dd14558f90:1190190183822-5315-2053515087269019680",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-133",
+    "timestamp": "2026-05-10T17:00:05.943471017Z",
+    "ip_address": "172.28.66.217",
+    "username": "HPL-133$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:852afe39b2624bd5b458e30f9c13732a:1251299632266-5315-2053511937153720424",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "SVI19200000142",
+    "timestamp": "2026-05-10T17:00:00.375615799Z",
+    "ip_address": "192.168.24.24",
+    "username": "SVI19200000142$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:77c4e313791c4c458944e497fd804f16:940356623609-5315-2053519373549912212",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-022",
+    "timestamp": "2026-05-10T16:59:59.42280108Z",
+    "ip_address": "172.28.66.181",
+    "username": "HPL-022$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:d09cccf2ce6648e4ac912dd449abaea6:299334972120-5315-2053515099625410578",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HR442000000151",
+    "timestamp": "2026-05-10T16:59:59.144324177Z",
+    "ip_address": "192.168.234.131",
+    "username": "HR442000000151$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:87f6e3b8867d47528d4a48bbbe431375:1005184827133-5315-2053512881375436967",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "PFT2300019",
+    "timestamp": "2026-05-10T16:59:58.786038486Z",
+    "ip_address": "192.168.212.13",
+    "username": "PFT2300019$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:006bafcfd8dc4e5e903ae27ddacaf2a8:1106713028430-5315-2053515070642843831",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "MFG19100000135",
+    "timestamp": "2026-05-10T16:59:57.251308526Z",
+    "ip_address": "192.168.28.33",
+    "username": "MFG19100000135$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:23ebf742fdf14758a1c87d70525048d1:765479272913-5786-63848976",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "HPL-160",
+    "timestamp": "2026-05-11T01:50:18.674001203Z",
+    "ip_address": "172.28.67.64",
+    "username": "Patcharin_U",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:4da5992cb22d4c67ac50eb11209779f6:1714226411376-5786-11795216",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "SVI19100000797",
+    "timestamp": "2026-05-11T00:58:49.583477081Z",
+    "ip_address": "192.168.28.135",
+    "username": "PD_Center128",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:2dad9f2ca1104979b8050373529aa2e1:47677370440-5786-1091856",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "F6369",
+    "timestamp": "2026-05-11T00:49:14.865833984Z",
+    "ip_address": "172.28.66.227",
+    "username": "SYSTEM",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:1c3be4ecc0d94614aa8127e946b5eaf5:524684785058-5315-2053515102762823906",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-064",
+    "timestamp": "2026-05-10T17:00:10.457672654Z",
+    "ip_address": "172.28.67.45",
+    "username": "HPL-064$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:74959801f7ba41e09ebc524999f3eaa7:268354890957-5315-2053519377794576393",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-017",
+    "timestamp": "2026-05-10T17:00:01.217756773Z",
+    "ip_address": "172.28.67.43",
+    "username": "HPL-017$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:ad98cd762df34e8a8b3c421eb4bd10a1:791305732367-5315-2053515099625410568",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "LNK2000131",
+    "timestamp": "2026-05-10T16:59:58.444295188Z",
+    "ip_address": "192.168.223.63",
+    "username": "LNK2000131$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:d8d25a0b32a24a90877dad3f7af9a5b7:1323213558063-5315-2053515062094807049",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "PDE19200000076",
+    "timestamp": "2026-05-10T16:59:58.12541412Z",
+    "ip_address": "192.168.30.45",
+    "username": "PDE19200000076$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:23ebf742fdf14758a1c87d70525048d1:765557628793-5786-63973904",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "HPL-160",
+    "timestamp": "2026-05-11T02:04:15.741238371Z",
+    "ip_address": "172.28.67.64",
+    "username": "Patcharin_U",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:23ebf742fdf14758a1c87d70525048d1:765554183147-5786-63968528",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "HPL-160",
+    "timestamp": "2026-05-11T02:03:27.084025594Z",
+    "ip_address": "172.28.67.64",
+    "username": "Patcharin_U",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:23ebf742fdf14758a1c87d70525048d1:765462164630-5786-63830032",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "HPL-160",
+    "timestamp": "2026-05-11T01:49:11.39331632Z",
+    "ip_address": "172.28.67.64",
+    "username": "Patcharin_U",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:de641f67dc9b4bed9635f1fb1b61b801:91536625792-5786-2740496",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "F6588",
+    "timestamp": "2026-05-11T01:41:34.013379037Z",
+    "ip_address": "172.28.66.184",
+    "username": "Oorawan_C",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7427512f75b240dfa5edb2422319d638:258038803236-5315-2053515124925452338",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "F6530",
+    "timestamp": "2026-05-10T17:00:10.613397206Z",
+    "ip_address": "172.28.67.116",
+    "username": "F6530$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:f53404b47f6c43579b7e9e21ed68ed0f:3866908422416-5315-2053513062124773483",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "LNK2200003",
+    "timestamp": "2026-05-10T17:00:11.063003071Z",
+    "ip_address": "172.17.8.49",
+    "username": "LNK2200003$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:1a0d165ca4a54db39172d6e0071cfe31:977073297222-5315-2053513139149058054",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-054",
+    "timestamp": "2026-05-10T17:00:08.758136035Z",
+    "ip_address": "172.28.67.123",
+    "username": "HPL-054$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:08f0e26ef6fe476dab21534768562837:1422066585586-5315-87633936",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "PRC1900008",
+    "timestamp": "2026-05-10T16:59:45.617397511Z",
+    "ip_address": "192.168.28.185",
+    "username": "PRC1900008$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:9ef6b2d9274b4230883f5c0638abd006:1417532244408-5315-2053515087269019685",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "PDD19100000381",
+    "timestamp": "2026-05-10T17:00:06.655899788Z",
+    "ip_address": "192.168.214.17",
+    "username": "PDD19100000381$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7377c5e95e714a6b83c8af143e401fc4:2617638258304-5315-2053515080780460109",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "LST2300004",
+    "timestamp": "2026-05-10T17:00:04.464643012Z",
+    "ip_address": "192.168.56.1",
+    "username": "LST2300004$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:87f6e3b8867d47528d4a48bbbe431375:1009481569680-5315-2053513139144863886",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "PFT2300019",
+    "timestamp": "2026-05-10T17:00:03.182854206Z",
+    "ip_address": "192.168.212.13",
+    "username": "PFT2300019$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:3fba8288ec36466296642f3e22c7a89f:652882194572-5315-2053514155848290383",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "SZ_VIVIENNE",
+    "timestamp": "2026-05-10T17:00:03.866194034Z",
+    "ip_address": "10.11.6.15",
+    "username": "SZ_VIVIENNE$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7bdef7bc198741d4a0854e7991114574:936821304316-5315-2053515084395892815",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-104",
+    "timestamp": "2026-05-10T17:00:01.891550148Z",
+    "ip_address": "172.28.66.213",
+    "username": "HPL-104$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:a331330a08c74090a443d1a02c46510f:922264148235-5315-2053512740144832597",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "PGM19100000259",
+    "timestamp": "2026-05-10T17:00:01.067114865Z",
+    "ip_address": "192.168.201.36",
+    "username": "PGM19100000259$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7377c5e95e714a6b83c8af143e401fc4:2706903204688-5315-2053515099629604865",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "LST2300004",
+    "timestamp": "2026-05-10T17:00:00.533328348Z",
+    "ip_address": "192.168.56.1",
+    "username": "LST2300004$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:48311cfa63c649e5956a5ac589aaffc1:2254203406045-5315-2053519377790382148",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "F6311",
+    "timestamp": "2026-05-10T16:59:57.566842898Z",
+    "ip_address": "172.28.66.153",
+    "username": "F6311$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:099aa18982474871b88ac71256beb2a6:2246610428924-5315-2053512996249034933",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "WH19200000190",
+    "timestamp": "2026-05-10T17:00:11.770789703Z",
+    "ip_address": "192.168.29.154",
+    "username": "WH19200000190$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:14945816d0e34c02a55ded3227f9009e:899132817154-5315-2053515080780460079",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-102",
+    "timestamp": "2026-05-10T17:00:00.88027174Z",
+    "ip_address": "172.28.66.154",
+    "username": "HPL-102$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
     "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:bc7cab3f49964fd3bd5915de96437ae0:358863722144-5315-2053513388571705365",
     "severity": "High",
     "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
@@ -210,6 +490,246 @@
     "filename": "WmiApSrv.exe"
   },
   {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:442d61bf87fa4e2aae45ce439bb1b68b:8700068795-5315-2053515122215989289",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-128",
+    "timestamp": "2026-05-10T16:59:59.367642983Z",
+    "ip_address": "172.28.66.105",
+    "username": "HPL-128$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7b4b5ddce00640298afd861a74497548:678926791303-5315-2053511188957081658",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "SVI19100000806",
+    "timestamp": "2026-05-10T16:59:58.556592076Z",
+    "ip_address": "192.168.30.35",
+    "username": "SVI19100000806$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:442d61bf87fa4e2aae45ce439bb1b68b:17448224742-5315-2053515070642843841",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-128",
+    "timestamp": "2026-05-10T16:59:56.8671212Z",
+    "ip_address": "172.28.66.105",
+    "username": "HPL-128$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:a624921b97444e35a368f17bfc9cc33e:909710027063-5315-2053512881375436962",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-153_1",
+    "timestamp": "2026-05-10T16:59:57.302867002Z",
+    "ip_address": "172.28.67.128",
+    "username": "HPL-153_1$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7cba7761b2914fe38f176e8198abb483:1341324979300-5786-46158864",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "SMT_CENTER18N",
+    "timestamp": "2026-05-11T02:24:45.806426461Z",
+    "ip_address": "192.168.203.60",
+    "username": "Smt_Center18",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:84c6a9403b05408cb144fbe6091db009:1329825679215-5315-2053515124925452328",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "PGM19200000238",
+    "timestamp": "2026-05-10T17:00:07.984444669Z",
+    "ip_address": "192.168.249.43",
+    "username": "PGM19200000238$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:15e42c8e493941ea9263c9a00cd69141:1022675386219-5315-2053513388571705385",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-148",
+    "timestamp": "2026-05-10T17:00:07.836386377Z",
+    "ip_address": "172.28.66.125",
+    "username": "HPL-148$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7377c5e95e714a6b83c8af143e401fc4:2654679931890-5315-2053513139149058049",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "LST2300004",
+    "timestamp": "2026-05-10T17:00:06.693502067Z",
+    "ip_address": "192.168.56.1",
+    "username": "LST2300004$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:a5f1bd6d1362485fa1d8326ea2b3ba54:773581014496-5315-2053515080780460100",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "TES19100000120",
+    "timestamp": "2026-05-10T17:00:04.951894951Z",
+    "ip_address": "192.168.28.114",
+    "username": "TES19100000120$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7cd1d1dd871344cf9ea5aa4aa41bca37:1622838209406-5315-2053515087269019675",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "SVI19200000126",
+    "timestamp": "2026-05-10T17:00:03.522170102Z",
+    "ip_address": "172.20.10.3",
+    "username": "SVI19200000126$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:31d074c0f9db4d60917a6a12ce1df83c:1095392736956-5315-2053519373554106386",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "PD444000000032",
+    "timestamp": "2026-05-10T17:00:02.29789083Z",
+    "ip_address": "192.168.137.1",
+    "username": "PD444000000032$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:18c3288a81e54a8e9a759ec02b7471df:993927394661-5315-2053512263294439515",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-027",
+    "timestamp": "2026-05-10T16:59:59.86278127Z",
+    "ip_address": "172.28.66.230",
+    "username": "HPL-027$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:23ebf742fdf14758a1c87d70525048d1:765504570293-5786-63893008",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "HPL-160",
+    "timestamp": "2026-05-11T01:58:58.646021925Z",
+    "ip_address": "172.28.67.64",
+    "username": "Patcharin_U",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:64a2553d838e4d898861d6b54a050a7d:670437606773-5315-2053514155848290393",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HR19100000219",
+    "timestamp": "2026-05-10T17:00:08.770956699Z",
+    "ip_address": "192.168.26.52",
+    "username": "HR19100000219$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:963a044662844ba5b20893b867a9a26b:1104215338211-5315-2053514814094045274",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-108",
+    "timestamp": "2026-05-10T17:00:08.676214494Z",
+    "ip_address": "172.28.67.31",
+    "username": "HPL-108$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:02f68d39894747fcab57f56ecaf6ea03:675309087677-5315-2053515131091136516",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-023",
+    "timestamp": "2026-05-10T17:00:05.892688766Z",
+    "ip_address": "172.28.67.15",
+    "username": "HPL-023$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:dcd22ca0a7a54d92b97883bebf59a984:562854192226-5315-2053514503145050190",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "F6531_1",
+    "timestamp": "2026-05-10T17:00:02.519609342Z",
+    "ip_address": "172.28.67.61",
+    "username": "F6531_1$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:dbb2fe89a25b4242a8e88b970c19437d:1100105172049-5315-2053515062094807059",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-056",
+    "timestamp": "2026-05-10T17:00:03.028571744Z",
+    "ip_address": "172.28.66.221",
+    "username": "HPL-056$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:57c7787a7aae4572a639463df33895bb:866462182010-5315-2053515087269019665",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-180",
+    "timestamp": "2026-05-10T16:59:58.549815789Z",
+    "ip_address": "172.28.66.95",
+    "username": "HPL-180$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:f580f0ee86c346268a9ba2e7cd9c8ec4:301257895738-5315-2053515099625410573",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-114",
+    "timestamp": "2026-05-10T16:59:59.209531152Z",
+    "ip_address": "172.28.66.166",
+    "username": "HPL-114$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:de641f67dc9b4bed9635f1fb1b61b801:91489654291-5786-2691344",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "F6588",
+    "timestamp": "2026-05-11T01:40:17.381446872Z",
+    "ip_address": "172.28.66.184",
+    "username": "Oorawan_C",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:4da5992cb22d4c67ac50eb11209779f6:1714407974522-5786-11998736",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "SVI19100000797",
+    "timestamp": "2026-05-11T01:31:02.885141479Z",
+    "ip_address": "192.168.28.135",
+    "username": "PD_Center128",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:bc84f0b380cf4ab38bf342db7cf02a0a:969965160582-5315-2053519377794576430",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-130",
+    "timestamp": "2026-05-10T17:00:06.273355629Z",
+    "ip_address": "172.28.66.164",
+    "username": "HPL-130$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:9044ea10bb114fa8aa7d1f64a8b19d3c:13330220527-5315-2053513388571705380",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "SVI19200000050",
+    "timestamp": "2026-05-10T17:00:04.432980346Z",
+    "ip_address": "192.168.201.43",
+    "username": "SVI19200000050$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
     "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:88cf0e45b1164792a989bed7f009d81e:763998344405-5315-2053513062124773473",
     "severity": "High",
     "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
@@ -217,6 +737,176 @@
     "timestamp": "2026-05-10T16:59:58.769271249Z",
     "ip_address": "192.168.1.104",
     "username": "PGM19200000264$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:d9b070932d854e14bfce3a6ac24b0d0e:1334766560622-5315-2053515070642843851",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "SZ_SHINE",
+    "timestamp": "2026-05-10T16:59:58.423263313Z",
+    "ip_address": "192.168.90.4",
+    "username": "SZ_SHINE$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:82e7d47d8e75408eae7fc80915595e8d:35005860024-5315-2053514155848290378",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "SVI441000000014",
+    "timestamp": "2026-05-10T16:59:56.836680258Z",
+    "ip_address": "192.168.234.150",
+    "username": "SVI441000000014$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:39ce471268164804b9e2c3a6b435d737:1302543213071-5315-2053512740144832585",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "F6363",
+    "timestamp": "2026-05-10T16:59:56.613081353Z",
+    "ip_address": "172.28.66.210",
+    "username": "F6363$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:4da5992cb22d4c67ac50eb11209779f6:1714212472984-5786-11779344",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "SVI19100000797",
+    "timestamp": "2026-05-11T00:58:00.869574176Z",
+    "ip_address": "192.168.28.135",
+    "username": "PD_Center128",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:30f5f0ada8224d01b2464ed92bfffda7:855019395978-5315-2053515062094807054",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "SVI19100000439",
+    "timestamp": "2026-05-10T16:59:58.421839875Z",
+    "ip_address": "192.168.33.12",
+    "username": "SVI19100000439$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:82e7d47d8e75408eae7fc80915595e8d:35434858093-5315-2053514503145050185",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "SVI441000000014",
+    "timestamp": "2026-05-10T16:59:57.686551459Z",
+    "ip_address": "192.168.234.150",
+    "username": "SVI441000000014$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:a7aa38889ff14c3ba6daedffa4380485:11768853486639-5315-2053512996249034918",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "ATS2300001",
+    "timestamp": "2026-05-10T16:59:56.848371059Z",
+    "ip_address": "192.168.203.108",
+    "username": "ATS2300001$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7cba7761b2914fe38f176e8198abb483:1341312580997-5786-46141456",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "SMT_CENTER18N",
+    "timestamp": "2026-05-11T02:23:51.224372822Z",
+    "ip_address": "192.168.203.60",
+    "username": "Smt_Center18",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:4da5992cb22d4c67ac50eb11209779f6:1714241845466-5786-11806992",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "SVI19100000797",
+    "timestamp": "2026-05-11T01:00:18.895358497Z",
+    "ip_address": "192.168.28.135",
+    "username": "PD_Center128",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:9f6ac4325aff49e191cab516d6f1ad8c:104272120755-5315-2053512881375436977",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "F6518",
+    "timestamp": "2026-05-10T17:00:09.900633641Z",
+    "ip_address": "172.28.67.132",
+    "username": "F6518$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:4511ccf7acee403b92740c21866d0a39:646239524939-5315-2053519377794576404",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "SZ19200000247",
+    "timestamp": "2026-05-10T17:00:04.392823501Z",
+    "ip_address": "10.11.6.6",
+    "username": "Unknown User",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:0e5dad1600cd4f149ecc9eb382960cfa:971074131445-5315-2053512740144832609",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "HPL-138",
+    "timestamp": "2026-05-10T17:00:02.122270049Z",
+    "ip_address": "172.28.67.94",
+    "username": "HPL-138$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7377c5e95e714a6b83c8af143e401fc4:2663354791456-5315-2053512996249034923",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "LST2300004",
+    "timestamp": "2026-05-10T16:59:57.858792596Z",
+    "ip_address": "192.168.56.1",
+    "username": "LST2300004$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:2c6f9f6e10c448e591bdc8f45db52107:1056526961698-5315-2053512263294439502",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "PE19200000364",
+    "timestamp": "2026-05-10T16:59:57.563374996Z",
+    "ip_address": "192.168.250.48",
+    "username": "PE19200000364$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:f82b6820a207431d9b1d9ac0ce197a80:1367429360771-5786-2951696",
+    "severity": "High",
+    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
+    "hostname": "F6596",
+    "timestamp": "2026-05-11T02:02:02.75099096Z",
+    "ip_address": "172.28.66.116",
+    "username": "t3014888",
+    "filename": "PrintDialog.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:0da69f847f0247839d6e1b2ac954f2c4:1039641287207-5315-2053513703542935690",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "QA19100000295",
+    "timestamp": "2026-05-10T17:00:04.375510144Z",
+    "ip_address": "192.168.202.98",
+    "username": "QA19100000295$",
+    "filename": "WmiApSrv.exe"
+  },
+  {
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:6dccb99f815c4e50827426406ac1a002:64673425107-5315-2053513388571705370",
+    "severity": "High",
+    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
+    "hostname": "FCT-01",
+    "timestamp": "2026-05-10T17:00:03.400762764Z",
+    "ip_address": "172.28.66.94",
+    "username": "FCT-01$",
     "filename": "WmiApSrv.exe"
   },
   {
@@ -250,553 +940,23 @@
     "filename": "PrintDialog.exe"
   },
   {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:6799905ae6c6434db593e4884b15516f:726200327141-5315-2053515102762823900",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-117",
-    "timestamp": "2026-05-10T17:00:09.802103729Z",
-    "ip_address": "172.28.67.62",
-    "username": "HPL-117$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:08f0e26ef6fe476dab21534768562837:1422066585586-5315-87633936",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "PRC1900008",
-    "timestamp": "2026-05-10T16:59:45.617397511Z",
-    "ip_address": "192.168.28.185",
-    "username": "PRC1900008$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:74959801f7ba41e09ebc524999f3eaa7:268354890957-5315-2053519377794576393",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-017",
-    "timestamp": "2026-05-10T17:00:01.217756773Z",
-    "ip_address": "172.28.67.43",
-    "username": "HPL-017$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:82e7d47d8e75408eae7fc80915595e8d:35005860024-5315-2053514155848290378",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "SVI441000000014",
-    "timestamp": "2026-05-10T16:59:56.836680258Z",
-    "ip_address": "192.168.234.150",
-    "username": "SVI441000000014$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:23ebf742fdf14758a1c87d70525048d1:765504570293-5786-63893008",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "HPL-160",
-    "timestamp": "2026-05-11T01:58:58.646021925Z",
-    "ip_address": "172.28.67.64",
-    "username": "Patcharin_U",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:006bafcfd8dc4e5e903ae27ddacaf2a8:1106345725382-5315-2053513139149058059",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "MFG19100000135",
-    "timestamp": "2026-05-10T17:00:09.156613352Z",
-    "ip_address": "192.168.28.33",
-    "username": "MFG19100000135$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:dcd22ca0a7a54d92b97883bebf59a984:562854192226-5315-2053514503145050190",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "F6531_1",
-    "timestamp": "2026-05-10T17:00:02.519609342Z",
-    "ip_address": "172.28.67.61",
-    "username": "F6531_1$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:3fba8288ec36466296642f3e22c7a89f:652882194572-5315-2053514155848290383",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "SZ_VIVIENNE",
-    "timestamp": "2026-05-10T17:00:03.866194034Z",
-    "ip_address": "10.11.6.15",
-    "username": "SZ_VIVIENNE$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:a331330a08c74090a443d1a02c46510f:922264148235-5315-2053512740144832597",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "PGM19100000259",
-    "timestamp": "2026-05-10T17:00:01.067114865Z",
-    "ip_address": "192.168.201.36",
-    "username": "PGM19100000259$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:ad98cd762df34e8a8b3c421eb4bd10a1:791305732367-5315-2053515099625410568",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "LNK2000131",
-    "timestamp": "2026-05-10T16:59:58.444295188Z",
-    "ip_address": "192.168.223.63",
-    "username": "LNK2000131$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:f580f0ee86c346268a9ba2e7cd9c8ec4:309697825813-5315-2053515062094807074",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-114",
-    "timestamp": "2026-05-10T17:00:10.715338598Z",
-    "ip_address": "172.28.66.166",
-    "username": "HPL-114$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:099aa18982474871b88ac71256beb2a6:2220839719170-5315-2053515050015240209",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "WH19200000190",
-    "timestamp": "2026-05-10T17:00:09.545173966Z",
-    "ip_address": "192.168.29.154",
-    "username": "WH19200000190$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:30f5f0ada8224d01b2464ed92bfffda7:855019395978-5315-2053515062094807054",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "SVI19100000439",
-    "timestamp": "2026-05-10T16:59:58.421839875Z",
-    "ip_address": "192.168.33.12",
-    "username": "SVI19100000439$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:d9b070932d854e14bfce3a6ac24b0d0e:1334766560622-5315-2053515070642843851",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "SZ_SHINE",
-    "timestamp": "2026-05-10T16:59:58.423263313Z",
-    "ip_address": "192.168.90.4",
-    "username": "SZ_SHINE$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:4da5992cb22d4c67ac50eb11209779f6:1714241845466-5786-11806992",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "SVI19100000797",
-    "timestamp": "2026-05-11T01:00:18.895358497Z",
-    "ip_address": "192.168.28.135",
-    "username": "PD_Center128",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:4da5992cb22d4c67ac50eb11209779f6:1714212472984-5786-11779344",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "SVI19100000797",
-    "timestamp": "2026-05-11T00:58:00.869574176Z",
-    "ip_address": "192.168.28.135",
-    "username": "PD_Center128",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:852afe39b2624bd5b458e30f9c13732a:1250869793823-5315-2053515080780460117",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "SVI19200000142",
-    "timestamp": "2026-05-10T17:00:07.893207877Z",
-    "ip_address": "192.168.24.24",
-    "username": "SVI19200000142$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7377c5e95e714a6b83c8af143e401fc4:2654679931890-5315-2053513139149058049",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "LST2300004",
-    "timestamp": "2026-05-10T17:00:06.693502067Z",
-    "ip_address": "192.168.56.1",
-    "username": "LST2300004$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:87f6e3b8867d47528d4a48bbbe431375:1009481569680-5315-2053513139144863886",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "PFT2300019",
-    "timestamp": "2026-05-10T17:00:03.182854206Z",
-    "ip_address": "192.168.212.13",
-    "username": "PFT2300019$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:dbb2fe89a25b4242a8e88b970c19437d:1100105172049-5315-2053515062094807059",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-056",
-    "timestamp": "2026-05-10T17:00:03.028571744Z",
-    "ip_address": "172.28.66.221",
-    "username": "HPL-056$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:1c9e73e209e44560978d02d829ba62c0:996741747256-5315-2053513388571705372",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-091",
-    "timestamp": "2026-05-10T17:00:00.88095187Z",
-    "ip_address": "172.28.66.178",
-    "username": "HPL-091$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:442d61bf87fa4e2aae45ce439bb1b68b:8700068795-5315-2053515122215989289",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-128",
-    "timestamp": "2026-05-10T16:59:59.367642983Z",
-    "ip_address": "172.28.66.105",
-    "username": "HPL-128$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:de641f67dc9b4bed9635f1fb1b61b801:91536625792-5786-2740496",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "F6588",
-    "timestamp": "2026-05-11T01:41:34.013379037Z",
-    "ip_address": "172.28.66.184",
-    "username": "Oorawan_C",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:963a044662844ba5b20893b867a9a26b:1104215338211-5315-2053514814094045274",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-108",
-    "timestamp": "2026-05-10T17:00:08.676214494Z",
-    "ip_address": "172.28.67.31",
-    "username": "HPL-108$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:02f68d39894747fcab57f56ecaf6ea03:671743141131-5315-2053512740144832616",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-023",
-    "timestamp": "2026-05-10T17:00:05.169256383Z",
-    "ip_address": "172.28.67.15",
-    "username": "HPL-023$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:4511ccf7acee403b92740c21866d0a39:646239524939-5315-2053519377794576404",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "SZ19200000247",
-    "timestamp": "2026-05-10T17:00:04.392823501Z",
-    "ip_address": "10.11.6.6",
-    "username": "Unknown User",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:30f5f0ada8224d01b2464ed92bfffda7:851311132133-5315-2053515050015240203",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "SVI19100000439",
-    "timestamp": "2026-05-10T17:00:01.338849044Z",
-    "ip_address": "192.168.33.12",
-    "username": "SVI19100000439$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:d8d25a0b32a24a90877dad3f7af9a5b7:1323213558063-5315-2053515062094807049",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "PDE19200000076",
-    "timestamp": "2026-05-10T16:59:58.12541412Z",
-    "ip_address": "192.168.30.45",
-    "username": "PDE19200000076$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:a624921b97444e35a368f17bfc9cc33e:909710027063-5315-2053512881375436962",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-153_1",
-    "timestamp": "2026-05-10T16:59:57.302867002Z",
-    "ip_address": "172.28.67.128",
-    "username": "HPL-153_1$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:39ce471268164804b9e2c3a6b435d737:1302543213071-5315-2053512740144832585",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "F6363",
-    "timestamp": "2026-05-10T16:59:56.613081353Z",
-    "ip_address": "172.28.66.210",
-    "username": "F6363$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:23ebf742fdf14758a1c87d70525048d1:765479272913-5786-63848976",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "HPL-160",
-    "timestamp": "2026-05-11T01:50:18.674001203Z",
-    "ip_address": "172.28.67.64",
-    "username": "Patcharin_U",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:4da5992cb22d4c67ac50eb11209779f6:1714407974522-5786-11998736",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "SVI19100000797",
-    "timestamp": "2026-05-11T01:31:02.885141479Z",
-    "ip_address": "192.168.28.135",
-    "username": "PD_Center128",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:f0d20568fdef4f4da347eb5e6a289aec:15682201876-5315-2053515062094807069",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-104",
-    "timestamp": "2026-05-10T17:00:10.149961379Z",
-    "ip_address": "172.28.66.213",
-    "username": "HPL-104$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:9f6ac4325aff49e191cab516d6f1ad8c:104272120755-5315-2053512881375436977",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "F6518",
-    "timestamp": "2026-05-10T17:00:09.900633641Z",
-    "ip_address": "172.28.67.132",
-    "username": "F6518$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:9ef6b2d9274b4230883f5c0638abd006:1417532244408-5315-2053515087269019685",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "PDD19100000381",
-    "timestamp": "2026-05-10T17:00:06.655899788Z",
-    "ip_address": "192.168.214.17",
-    "username": "PDD19100000381$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:9044ea10bb114fa8aa7d1f64a8b19d3c:13330220527-5315-2053513388571705380",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "SVI19200000050",
-    "timestamp": "2026-05-10T17:00:04.432980346Z",
-    "ip_address": "192.168.201.43",
-    "username": "SVI19200000050$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:6dccb99f815c4e50827426406ac1a002:64673425107-5315-2053513388571705370",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "FCT-01",
-    "timestamp": "2026-05-10T17:00:03.400762764Z",
-    "ip_address": "172.28.66.94",
-    "username": "FCT-01$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:852afe39b2624bd5b458e30f9c13732a:1251299632266-5315-2053511937153720424",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "SVI19200000142",
-    "timestamp": "2026-05-10T17:00:00.375615799Z",
-    "ip_address": "192.168.24.24",
-    "username": "SVI19200000142$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:23ebf742fdf14758a1c87d70525048d1:765554183147-5786-63968528",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "HPL-160",
-    "timestamp": "2026-05-11T02:03:27.084025594Z",
-    "ip_address": "172.28.67.64",
-    "username": "Patcharin_U",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:f82b6820a207431d9b1d9ac0ce197a80:1367429360771-5786-2951696",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "F6596",
-    "timestamp": "2026-05-11T02:02:02.75099096Z",
-    "ip_address": "172.28.66.116",
-    "username": "t3014888",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:aaef2a78b136486a9bcfa2dd14558f90:1190190183822-5315-2053515087269019680",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-133",
-    "timestamp": "2026-05-10T17:00:05.943471017Z",
-    "ip_address": "172.28.66.217",
-    "username": "HPL-133$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7bdef7bc198741d4a0854e7991114574:936821304316-5315-2053515084395892815",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-104",
-    "timestamp": "2026-05-10T17:00:01.891550148Z",
-    "ip_address": "172.28.66.213",
-    "username": "HPL-104$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7377c5e95e714a6b83c8af143e401fc4:2663354791456-5315-2053512996249034923",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "LST2300004",
-    "timestamp": "2026-05-10T16:59:57.858792596Z",
-    "ip_address": "192.168.56.1",
-    "username": "LST2300004$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:48311cfa63c649e5956a5ac589aaffc1:2254203406045-5315-2053519377790382148",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "F6311",
-    "timestamp": "2026-05-10T16:59:57.566842898Z",
-    "ip_address": "172.28.66.153",
-    "username": "F6311$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:006bafcfd8dc4e5e903ae27ddacaf2a8:1106713028430-5315-2053515070642843831",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "MFG19100000135",
-    "timestamp": "2026-05-10T16:59:57.251308526Z",
-    "ip_address": "192.168.28.33",
-    "username": "MFG19100000135$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:a7aa38889ff14c3ba6daedffa4380485:11768853486639-5315-2053512996249034918",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "ATS2300001",
-    "timestamp": "2026-05-10T16:59:56.848371059Z",
-    "ip_address": "192.168.203.108",
-    "username": "ATS2300001$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:2dad9f2ca1104979b8050373529aa2e1:47677370440-5786-1091856",
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:2dad9f2ca1104979b8050373529aa2e1:47749718120-5786-1232912",
     "severity": "High",
     "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
     "hostname": "F6369",
-    "timestamp": "2026-05-11T00:49:14.865833984Z",
+    "timestamp": "2026-05-11T00:50:48.193905673Z",
     "ip_address": "172.28.66.227",
     "username": "SYSTEM",
     "filename": "WmiApSrv.exe"
   },
   {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:1a0d165ca4a54db39172d6e0071cfe31:977073297222-5315-2053513139149058054",
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:278e5e1d212a4675b316ef4f3fa7b0d3:16887355727-5315-2053515110115364899",
     "severity": "High",
     "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-054",
-    "timestamp": "2026-05-10T17:00:08.758136035Z",
-    "ip_address": "172.28.67.123",
-    "username": "HPL-054$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:84c6a9403b05408cb144fbe6091db009:1329825679215-5315-2053515124925452328",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "PGM19200000238",
-    "timestamp": "2026-05-10T17:00:07.984444669Z",
-    "ip_address": "192.168.249.43",
-    "username": "PGM19200000238$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:77c4e313791c4c458944e497fd804f16:940356623609-5315-2053519373549912212",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-022",
-    "timestamp": "2026-05-10T16:59:59.42280108Z",
-    "ip_address": "172.28.66.181",
-    "username": "HPL-022$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:23ebf742fdf14758a1c87d70525048d1:765426302129-5786-63797008",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "HPL-160",
-    "timestamp": "2026-05-11T01:48:34.728954754Z",
-    "ip_address": "172.28.67.64",
-    "username": "Patcharin_U",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:64a2553d838e4d898861d6b54a050a7d:670437606773-5315-2053514155848290393",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HR19100000219",
-    "timestamp": "2026-05-10T17:00:08.770956699Z",
-    "ip_address": "192.168.26.52",
-    "username": "HR19100000219$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:bc84f0b380cf4ab38bf342db7cf02a0a:969965160582-5315-2053519377794576430",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-130",
-    "timestamp": "2026-05-10T17:00:06.273355629Z",
-    "ip_address": "172.28.66.164",
-    "username": "HPL-130$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:a5f1bd6d1362485fa1d8326ea2b3ba54:773581014496-5315-2053515080780460100",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "TES19100000120",
-    "timestamp": "2026-05-10T17:00:04.951894951Z",
-    "ip_address": "192.168.28.114",
-    "username": "TES19100000120$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:0da69f847f0247839d6e1b2ac954f2c4:1039641287207-5315-2053513703542935690",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "QA19100000295",
-    "timestamp": "2026-05-10T17:00:04.375510144Z",
-    "ip_address": "192.168.202.98",
-    "username": "QA19100000295$",
+    "hostname": "HPL-079",
+    "timestamp": "2026-05-10T17:00:04.70452984Z",
+    "ip_address": "172.28.66.237",
+    "username": "HPL-079$",
     "filename": "WmiApSrv.exe"
   },
   {
@@ -810,193 +970,33 @@
     "filename": "WmiApSrv.exe"
   },
   {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:d09cccf2ce6648e4ac912dd449abaea6:299334972120-5315-2053515099625410578",
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:30f5f0ada8224d01b2464ed92bfffda7:851311132133-5315-2053515050015240203",
     "severity": "High",
     "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HR442000000151",
-    "timestamp": "2026-05-10T16:59:59.144324177Z",
-    "ip_address": "192.168.234.131",
-    "username": "HR442000000151$",
+    "hostname": "SVI19100000439",
+    "timestamp": "2026-05-10T17:00:01.338849044Z",
+    "ip_address": "192.168.33.12",
+    "username": "SVI19100000439$",
     "filename": "WmiApSrv.exe"
   },
   {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7b4b5ddce00640298afd861a74497548:678926791303-5315-2053511188957081658",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "SVI19100000806",
-    "timestamp": "2026-05-10T16:59:58.556592076Z",
-    "ip_address": "192.168.30.35",
-    "username": "SVI19100000806$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:4da5992cb22d4c67ac50eb11209779f6:1714226411376-5786-11795216",
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:29130f47cdb549759c8bb32978afde31:1520761381655-5786-6782736",
     "severity": "High",
     "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "SVI19100000797",
-    "timestamp": "2026-05-11T00:58:49.583477081Z",
-    "ip_address": "192.168.28.135",
-    "username": "PD_Center128",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:1c3be4ecc0d94614aa8127e946b5eaf5:524684785058-5315-2053515102762823906",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-064",
-    "timestamp": "2026-05-10T17:00:10.457672654Z",
-    "ip_address": "172.28.67.45",
-    "username": "HPL-064$",
+    "hostname": "HPL-046",
+    "timestamp": "2026-05-11T00:38:58.73193701Z",
+    "ip_address": "172.28.66.158",
+    "username": "HPL-046$",
     "filename": "WmiApSrv.exe"
   },
   {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:31d074c0f9db4d60917a6a12ce1df83c:1095392736956-5315-2053519373554106386",
+    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:852afe39b2624bd5b458e30f9c13732a:1250869793823-5315-2053515080780460117",
     "severity": "High",
     "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "PD444000000032",
-    "timestamp": "2026-05-10T17:00:02.29789083Z",
-    "ip_address": "192.168.137.1",
-    "username": "PD444000000032$",
+    "hostname": "SVI19200000142",
+    "timestamp": "2026-05-10T17:00:07.893207877Z",
+    "ip_address": "192.168.24.24",
+    "username": "SVI19200000142$",
     "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:f580f0ee86c346268a9ba2e7cd9c8ec4:301257895738-5315-2053515099625410573",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-114",
-    "timestamp": "2026-05-10T16:59:59.209531152Z",
-    "ip_address": "172.28.66.166",
-    "username": "HPL-114$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:23ebf742fdf14758a1c87d70525048d1:765462164630-5786-63830032",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "HPL-160",
-    "timestamp": "2026-05-11T01:49:11.39331632Z",
-    "ip_address": "172.28.67.64",
-    "username": "Patcharin_U",
-    "filename": "PrintDialog.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:82b32fc37b95457c9e3f6427232f2e08:545634952704-5315-2053515099659022455",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "F6483",
-    "timestamp": "2026-05-10T17:00:05.478202768Z",
-    "ip_address": "172.28.66.151",
-    "username": "F6483$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:cf731b9e1dbe4c498279139a45701159:1052435034320-5315-2053514155848290388",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPW-02",
-    "timestamp": "2026-05-10T17:00:02.564783292Z",
-    "ip_address": "172.28.67.38",
-    "username": "HPW-02$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:57c7787a7aae4572a639463df33895bb:866462182010-5315-2053515087269019665",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-180",
-    "timestamp": "2026-05-10T16:59:58.549815789Z",
-    "ip_address": "172.28.66.95",
-    "username": "HPL-180$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:15e42c8e493941ea9263c9a00cd69141:1022675386219-5315-2053513388571705385",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-148",
-    "timestamp": "2026-05-10T17:00:07.836386377Z",
-    "ip_address": "172.28.66.125",
-    "username": "HPL-148$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:f0d20568fdef4f4da347eb5e6a289aec:13715365448-5315-2053515102762823882",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-104",
-    "timestamp": "2026-05-10T17:00:07.107619414Z",
-    "ip_address": "172.28.66.213",
-    "username": "HPL-104$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:62e98cae54e847bea359e6e96e6e5158:931569161375-5315-2053514503145050200",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "NPI19200000391",
-    "timestamp": "2026-05-10T17:00:05.262153805Z",
-    "ip_address": "172.20.10.9",
-    "username": "NPI19200000391$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:0e5dad1600cd4f149ecc9eb382960cfa:971074131445-5315-2053512740144832609",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-138",
-    "timestamp": "2026-05-10T17:00:02.122270049Z",
-    "ip_address": "172.28.67.94",
-    "username": "HPL-138$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:0e5dad1600cd4f149ecc9eb382960cfa:962334096357-5315-2053511937153720426",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-138",
-    "timestamp": "2026-05-10T17:00:00.830022041Z",
-    "ip_address": "172.28.67.94",
-    "username": "HPL-138$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:1dc81b0f9a40482695a30e68506a8c6f:10994764665670-5315-2053519373549912217",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "ATS2300010",
-    "timestamp": "2026-05-10T17:00:00.005291859Z",
-    "ip_address": "10.10.10.1",
-    "username": "ATS2300010$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:18c3288a81e54a8e9a759ec02b7471df:993927394661-5315-2053512263294439515",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "HPL-027",
-    "timestamp": "2026-05-10T16:59:59.86278127Z",
-    "ip_address": "172.28.66.230",
-    "username": "HPL-027$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:82e7d47d8e75408eae7fc80915595e8d:35434858093-5315-2053514503145050185",
-    "severity": "High",
-    "description": "A SHA256 hash matched a Custom Intelligence Indicator (Custom IOC) with high severity.",
-    "hostname": "SVI441000000014",
-    "timestamp": "2026-05-10T16:59:57.686551459Z",
-    "ip_address": "192.168.234.150",
-    "username": "SVI441000000014$",
-    "filename": "WmiApSrv.exe"
-  },
-  {
-    "detection_id": "7dd4216bc2b14877aee697784e5b9908:ind:7cba7761b2914fe38f176e8198abb483:1341324979300-5786-46158864",
-    "severity": "High",
-    "description": "Your IOC management action for this SHA256 hash is set to detect and/or block",
-    "hostname": "SMT_CENTER18N",
-    "timestamp": "2026-05-11T02:24:45.806426461Z",
-    "ip_address": "192.168.203.60",
-    "username": "Smt_Center18",
-    "filename": "PrintDialog.exe"
   }
 ]

@@ -20,7 +20,7 @@ export async function sendEmailNotification(alert: any, htmlContent: string) {
       // 💡 สามารถแต่งชื่อผู้ส่งให้ดูเป็นทางการขึ้นได้ตรงนี้
       from: `"BMSP SOC Team" <${process.env.SMTP_USER}>`,
       to: process.env.EMAIL_TO, // อีเมลปลายทาง 
-      subject: `🚨 [Alert] ตรวจพบเหตุการณ์ความเสี่ยงระดับ ${alert.severity || 'High'} บน ${alert.host_name}`,
+      subject: `🚨 [Alert] ตรวจพบเหตุการณ์ความเสี่ยงระดับ ${alert.severity || 'High'} บน ${alert.hostname}`,
       html: htmlContent,
     };
 

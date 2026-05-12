@@ -7,8 +7,9 @@ dotenv.config({ path: '.env.local' });
 
 import { fetchCrowdStrikeAlerts } from '../src/lib/services/crowdstrike';
 import { sendNotifications } from '../src/lib/services/notification/index';
+import { pool } from './lib/db';
 
-const notifiedAlertIds = new Set<string>();
+//const notifiedAlertIds = new Set<string>();
 
 // สร้างตัวแปรสำหรับล็อกการทำงาน
 let isProcessing = false;
@@ -17,9 +18,6 @@ console.log('=============================================');
 console.log(' [Terminal Mode] CrowdStrike Monitor Started!');
 console.log(' ระบบจะทำการเช็ค Alert ทุกๆ 1 นาที (กด Ctrl+C เพื่อหยุด)'); 
 console.log('=============================================');
-
-//  สร้าง path สำหรับเก็บไฟล์ JSON
-const DB_FILE = path.join(process.cwd(), 'alerts.json');
 
 const runJob = async () => {
   //เช็คว่าประตูล็อกอยู่ไหม ถ้าระบบยังทำงานรอบเก่าไม่เสร็จ ให้เด้งออกไปเลย
@@ -31,30 +29,58 @@ const runJob = async () => {
   isProcessing = true; //ล็อกประตู เริ่มการทำงานรอบใหม่
 
   try {
-    console.log(`\n[${new Date().toLocaleString()}]  Checking for alerts...`);
-    const alertIds = await fetchCrowdStrikeAlerts();
-    
-    //  นำข้อมูล Alerts ทั้งหมดมาเซฟลงไฟล์ JSON เพื่อให้หน้าเว็บเอาไปอ่าน
-    await fs.writeFile(DB_FILE, JSON.stringify(alertIds, null, 2));
+    console.log(`\n[${new Date().toLocaleString()}] เริ่มกระบวนการทำงาน...`);
 
-    for (const alert of alertIds) {
-      // ตรวจสอบว่าเป็น Alert ใหม่หรือไม่
-      if (!notifiedAlertIds.has(alert.detection_id)) {
-        console.log(`---- พบ Alert ใหม่! ID: ${alert.detection_id}`);
-        const success = await sendNotifications(alert);
-        
-        if (success) {
-          notifiedAlertIds.add(alert.detection_id); // ถ้าส่งสำเร็จ ค่อยจดจำ ID
-        }
-      } 
-      else {
-        console.log(`--- ข้าม Alert (ส่งแจ้งเตือนไปแล้ว ID: ${alert.detection_id})`);
-      }
+    // ขั้นที่ 1 & 2: ดึงข้อมูลมา และ บันทึกลง DB 
+    // มันจะดึงมา -> INSERT ลง DB พร้อมสถานะ 'PENDING' -> จบงานของมัน
+    await fetchCrowdStrikeAlerts(); 
+
+    // ขั้นที่ 3: เอาข้อมูลจาก DB มาใช้ (หยิบเฉพาะตัวที่ยังไม่ได้ส่ง และเรียงตามเวลาจากเก่าไปใหม่)
+    const getPendingQuery = `
+        SELECT * FROM "AlertRecord" 
+        WHERE "mailStatus" = 'PENDING' 
+        ORDER BY timestamp ASC;
+    `;
+    const pendingResult = await pool.query(getPendingQuery);
+    const pendingAlerts = pendingResult.rows;
+
+    if (pendingAlerts.length === 0) {
+        console.log(`ℹ️ ไม่มี Alert ค้างส่งในระบบรอบนี้`);
+        return;
     }
+
+    console.log(` พบข้อมูลที่ต้องจัดส่งจาก Database จำนวน ${pendingAlerts.length} รายการ`);
+
+    // เริ่มวนลูปประมวลผลข้อมูลที่ได้มาจาก DB
+    for (const dbAlert of pendingAlerts) {
+        console.log(`\n---- กำลังประมวลผล Alert ID: ${dbAlert.id}`);
+        
+        // หมายเหตุสำคัญ: ตอนนี้ตัวแปร dbAlert ดึงมาจาก Database 
+        // ชื่อ Key ต่างๆ จะอิงตามชื่อ Column ใน Database นะครับ (เช่น dbAlert.ipAddress)
+        
+        // ขั้นที่ 4 & 5: โยนให้ AI -> จัด Format -> ส่ง Email/Teams
+        // ฟังก์ชัน sendNotifications จะรับช่วงต่อจัดการให้ทั้งหมด
+        const success = await sendNotifications(dbAlert);
+        
+        if (success === 'SENT' || success === 'FAIL') {
+            // 🌟 ถ้าสถานะเป็น SENT (สำเร็จ) หรือ FAIL (ส่ง Teams ให้คนทำแมนนวลแล้ว) ให้ขีดฆ่าใน DB ได้เลย
+            try {
+                // เปลี่ยนมารับค่า $1 เป็นสถานะ และ $2 เป็น id
+                const updateQuery = `UPDATE "AlertRecord" SET "mailStatus" = $1 WHERE id = $2`;
+                await pool.query(updateQuery, [success, dbAlert.id]);
+                console.log(`      ✅ อัปเดตสถานะ DB เป็น '${success}' เรียบร้อย`);
+            } catch (dbError: any) {
+                console.error(`      ❌ อัปเดตสถานะ DB ไม่สำเร็จ:`, dbError.message);
+            }
+        } else {
+            // กรณีเป็น PENDING หรือค่าอื่นๆ คือเมลไม่ไปและไม่ได้ส่ง Teams 
+            console.log(`      ⚠️ ระบบเก็บสถานะไว้เป็น PENDING เพื่อดำเนินการใหม่ในรอบหน้า`);
+        }
+    }
+
   } catch (error: any) {
-    console.error(`--- Error:`, error.message);
+    console.error(`--- Error ระหว่างระบบทำงาน:`, error.message);
   } finally {
-    //ปลดล็อกประตูไม่ว่าจะทำงานสำเร็จหรือเกิด Error ก็ตาม
     isProcessing = false; 
   }
 };

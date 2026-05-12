@@ -25,7 +25,7 @@ export async function fetchCrowdStrikeAlerts(): Promise<CrowdStrikeAlert[]> {
         // 1: ค้นหา ID ของ Alert 
         const queryResponse = await axios.get(`${process.env.CS_BASE_URL}/alerts/queries/alerts/v2`, {
             headers: { 'Authorization': `Bearer ${token}` },
-            params: { filter: "severity:>=60", limit: 1 }
+            params: { filter: "severity:>=60", limit: 4 }
         });
 
         const alertIds = queryResponse.data.resources;
@@ -54,7 +54,7 @@ export async function fetchCrowdStrikeAlerts(): Promise<CrowdStrikeAlert[]> {
             description: alert.description || 'ตรวจพบพฤติกรรมน่าสงสัย (No description)',
             hostname: alert.device?.hostname || 'Unknown Device',
             timestamp: alert.created_timestamp,
-            ip_address: alert.device?.local_ip || 'Unknown IP',
+            ipAddress: alert.device?.local_ip || 'Unknown IP',
             username: alert.user_name || 'Unknown User',
             filename: alert.filename || 'ไม่พบชื่อไฟล์',
             filepath: alert.filepath || 'N/A',
@@ -90,7 +90,7 @@ export async function fetchCrowdStrikeAlerts(): Promise<CrowdStrikeAlert[]> {
                 alert.severity,                 // $2
                 alert.description,              // $3
                 alert.hostname,                 // $4
-                alert.ip_address,               // $5
+                alert.ipAddress,                // $5
                 alert.username,                 // $6
                 alert.filename,                 // $7
                 new Date(alert.timestamp),      // $8
