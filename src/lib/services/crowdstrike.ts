@@ -46,6 +46,7 @@ export async function fetchCrowdStrikeAlerts(): Promise<CrowdStrikeAlert[]> {
 
         // 3: แปลงข้อมูล
         const rawAlerts = detailsResponse.data.resources;
+
         const mappedAlerts: CrowdStrikeAlert[] = rawAlerts.map((alert: any) => ({
             detection_id: alert.composite_id,
             severity: alert.severity_name || 'High',
