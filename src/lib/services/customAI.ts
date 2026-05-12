@@ -9,7 +9,7 @@ import { sendToTeams } from '../services/notification/teams';
 export async function getAnalysisFromExternalAI(alert: any) {
   const apiUrl = process.env.apiAi!; // ดึง URL ของ AI จาก .env.local
 
-  const safeId = alert.alertIds || "00000000";
+  const safeId = alert.id|| "00000000";
 
   const payload = {
     inc_no: `INC-${String(safeId).substring(0, 8)}`,

@@ -1,14 +1,21 @@
+// ตัวอย่างการอัปเดตไฟล์ types/alert.ts
 export interface CrowdStrikeAlert {
     id: string;
     detection_id: string;
-    severity: 'Low' | 'Medium' | 'High';
+    severity: string;
     description: string;
     hostname: string;
-    timestamp: string;
-    ip_address?: string;
-    username?: string;
-    filename?: string;
-    
-    customer_message?: string
+    ip_address: string;
+    username: string;
+    filename: string;
+    timestamp: string | Date;
+    filepath: string;
+    tactic: string;
+    technique: string;
+    cmdline: string;
+    sha256: string;
+    disposition: string;
+    macAddress: string;
 
+    customer_message : string; // เพิ่มฟิลด์นี้เพื่อเก็บข้อความที่ AI สรุปให้ลูกค้า
 }
