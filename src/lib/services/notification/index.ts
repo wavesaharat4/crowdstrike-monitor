@@ -48,8 +48,9 @@ export async function sendNotifications(alert: any): Promise<String> {
       await saveNotificationLog({
         alertId: alert.id,
 
-        toEmails: [process.env.EMAIL_TO || ''],
-        ccEmails: [process.env.EMAIL_CC || ''],
+        toEmails: process.env.EMAIL_TO ? process.env.EMAIL_TO.split(',') : [],
+        ccEmails: process.env.EMAIL_CC ? process.env.EMAIL_CC.split(',') : [],
+        bccEmails: process.env.EMAIL_BCC ? process.env.EMAIL_BCC.split(',') : [],
 
         mailSubject: '[MANUAL] AI Fail',
         mailBodyText: 'AI ไม่ตอบกลับ ระบบไม่ได้ส่ง Email อัตโนมัติ',
@@ -114,8 +115,9 @@ export async function sendNotifications(alert: any): Promise<String> {
     await saveNotificationLog({
       alertId: alert.id,
 
-      toEmails: [process.env.EMAIL_TO || ''],
-      ccEmails: [process.env.EMAIL_CC || ''],
+      toEmails: process.env.EMAIL_TO ? process.env.EMAIL_TO.split(',') : [],
+      ccEmails: process.env.EMAIL_CC ? process.env.EMAIL_CC.split(',') : [],
+      bccEmails: process.env.EMAIL_BCC ? process.env.EMAIL_BCC.split(',') : [],
 
       mailSubject: emailResult.subject,
       mailBodyText: plainTextMessage,
