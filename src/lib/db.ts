@@ -1,8 +1,12 @@
 import { Pool } from 'pg';
 
-// สร้างท่อเชื่อมต่อไปยัง Database จาก DATABASE_URL ในไฟล์ .env
 export const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  database: process.env.DB_NAME,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+
   ssl: {
     rejectUnauthorized: false,
   },

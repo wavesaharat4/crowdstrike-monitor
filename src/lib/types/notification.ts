@@ -9,13 +9,13 @@ export type NotificationLogData = {
   mailBodyText?: string;
   mailBodyHtml?: string;
 
-  mailStatus?: ('sent' | 'failed' | 'pending');
+  mailStatus?: string;
   mailErrorMsg?: string;
 
   teamsWebhookUrl?: string;
   teamsPayload?: any;
 
-  teamsStatus?: ('sent' | 'failed' | 'pending');
+  teamsStatus?: string;
   teamsErrorMsg?: string;
 };
 

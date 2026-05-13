@@ -6,5 +6,5 @@ export function startScheduler() {
     await processAlerts();
   });
 
-  console.log('✅ Scheduler เริ่มทำงานแล้ว (ทุก 1 นาที)');
+  console.log('เริ่มทำงานแล้ว (ทุก 1 นาที)');
 }

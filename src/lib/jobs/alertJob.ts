@@ -19,15 +19,9 @@ export async function processAlerts() {
 
         if (newAlerts.length === 0) {
             console.log(`ไม่มี Alert ใหม่ในรอบนี้`);
-            return;
         }
 
         for (const [i, alert] of newAlerts.entries()) {
-            if (i > 0) {
-                console.log(`พัก 3 วินาที ป้องกัน AI โควตาเต็ม...`);
-                await delay(3000);
-            }
-
             console.log(`[NEW] ID: ${alert.detection_id}`);
             console.log(`      เครื่อง: ${alert.hostname} | IP: ${alert.ipAddress}`);
             console.log(`      ผู้ใช้: ${alert.username} | ไฟล์: ${alert.filename}`);
@@ -47,26 +41,23 @@ export async function processAlerts() {
                 return;
             }
         
-            console.log(` พบข้อมูลที่ต้องจัดส่งจาก Database จำนวน ${pendingAlerts.length} รายการ`);
+            console.log(`พบข้อมูลที่ต้องจัดส่งจาก Database จำนวน ${pendingAlerts.length} รายการ`);
         
             // เริ่มวนลูปประมวลผลข้อมูลที่ได้มาจาก DB
             for (const dbAlert of pendingAlerts) {
                 console.log(`\n---- กำลังประมวลผล Alert ID: ${dbAlert.id}`);
-                
-                // หมายเหตุสำคัญ: ตอนนี้ตัวแปร dbAlert ดึงมาจาก Database 
-                // ชื่อ Key ต่างๆ จะอิงตามชื่อ Column ใน Database นะครับ (เช่น dbAlert.ipAddress)
-                
-                // ขั้นที่ 4 & 5: โยนให้ AI -> จัด Format -> ส่ง Email/Teams
+            
+                // โยนให้ AI -> จัด Format -> ส่ง Email/Teams
                 // ฟังก์ชัน sendNotifications จะรับช่วงต่อจัดการให้ทั้งหมด
                 const success = await sendNotifications(dbAlert);
                 
                 if (success === 'SENT' || success === 'FAIL') {
-                    // 🌟 ถ้าสถานะเป็น SENT (สำเร็จ) หรือ FAIL (ส่ง Teams ให้คนทำแมนนวลแล้ว) ให้ขีดฆ่าใน DB ได้เลย
+                    //  ถ้าสถานะเป็น SENT (สำเร็จ) หรือ FAIL (ส่ง Teams ให้คนทำแมนนวลแล้ว) 
                     try {
                         // เปลี่ยนมารับค่า $1 เป็นสถานะ และ $2 เป็น id
                         const updateQuery = `UPDATE "AlertRecord" SET "mailStatus" = $1 WHERE id = $2`;
                         await pool.query(updateQuery, [success, dbAlert.id]);
-                        console.log(`      ✅ อัปเดตสถานะ DB เป็น '${success}' เรียบร้อย`);
+                        console.log(`      ✅ อัปเดต Mail Status เป็น ${success} เรียบร้อย`);
                     } catch (dbError: any) {
                         console.error(`      ❌ อัปเดตสถานะ DB ไม่สำเร็จ:`, dbError.message);
                     }

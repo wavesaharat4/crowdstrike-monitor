@@ -7,11 +7,36 @@ import { pool } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
 
-export default async function DashboardPage() {
-  // ดึงข้อมูลทั้งหมดจาก DB เรียงจากใหม่ไปเก่า
-  const result = await pool.query(
-    `SELECT * FROM "AlertRecord" ORDER BY timestamp DESC`
+//  ฟังก์ชันช่วยสร้าง Badge สีสวยๆ สำหรับสถานะ Email / Teams
+function NotificationBadge({ type, status }: { type: string, status: string | null }) {
+  const normalizedStatus = (status || 'PENDING').toUpperCase();
+  let colorClass = 'text-slate-400 bg-slate-500/10 border-slate-500/20'; // สีเทาสำหรับ PENDING
+  let icon = '⏳';
+
+  if (normalizedStatus === 'SENT') {
+    colorClass = 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20'; // สีเขียวสำหรับ SENT
+    icon = '✅';
+  } else if (normalizedStatus === 'FAIL' || normalizedStatus === 'FAILED') {
+    colorClass = 'text-red-400 bg-red-500/10 border-red-500/20'; // สีแดงสำหรับ FAIL
+    icon = '❌';
+  }
+
+  return (
+    <span className={`inline-flex items-center gap-1.5 text-[9px] font-bold tracking-wider uppercase px-2 py-1 rounded-md border ${colorClass}`}>
+      <span>{icon}</span> {type}: {normalizedStatus}
+    </span>
   );
+}
+
+export default async function DashboardPage() {
+  //  อัปเดต SQL ให้ดึงสถานะล่าสุดจากตาราง notification_logs มาด้วย
+  const result = await pool.query(`
+    SELECT a.*, 
+           (SELECT mail_status FROM notification_logs WHERE alert_id = a.id ORDER BY sent_at DESC LIMIT 1) as mail_log_status,
+           (SELECT teams_status FROM notification_logs WHERE alert_id = a.id ORDER BY sent_at DESC LIMIT 1) as teams_log_status
+    FROM "AlertRecord" a
+    ORDER BY a.timestamp DESC
+  `);
   const allAlerts = result.rows;
 
   async function runManualCheck() {
@@ -23,9 +48,7 @@ export default async function DashboardPage() {
 
   return (
     <main className="min-h-screen bg-[#0b0f1a] text-slate-200 font-sans p-6 md:p-10">
-      {/* 🟢 เรียกใช้งาน AutoRefresh (ตั้งไว้ที่ 1 นาที หรือ 300,000 มิลลิวินาที) */}
-      <AutoRefresh intervalMs={60000} />
-      {/* Background grid texture */}
+      <AutoRefresh intervalMs={4000} />
       <div className="fixed inset-0 pointer-events-none z-0 [background-image:linear-gradient(rgba(148,163,184,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.025)_1px,transparent_1px)] [background-size:48px_48px]" />
       <div className="fixed top-0 left-0 right-0 h-[3px] z-10 bg-gradient-to-r from-transparent via-red-500 to-transparent" />
 
@@ -58,10 +81,8 @@ export default async function DashboardPage() {
             </p>
           </div>
 
-          {/* 🟢 นำ TriggerButton กลับมาใช้งาน */}
           <div className="flex flex-wrap items-center gap-4">
             <LiveClock />
-
             <div className="flex-shrink-0 pt-1">
               <TriggerButton action={runManualCheck} />
             </div>
@@ -178,7 +199,24 @@ export default async function DashboardPage() {
                       </div>
                     </div>
 
-                    {/* 6. Deep Dive: Description, File, Path, Cmdline */}
+                    {/*  6. Notification Status  */}
+                    <div>
+                      <p className="text-[10px] text-slate-400 uppercase tracking-[0.1em] font-bold mb-1">
+                        Notifications
+                      </p>
+                      <div className="flex flex-col items-start gap-2 mt-1">
+                        <NotificationBadge 
+                          type="Email" 
+                          status={alert.mail_log_status || alert.mailStatus} 
+                        />
+                        <NotificationBadge 
+                          type="Teams" 
+                          status={alert.teams_log_status || alert.mailStatus} 
+                        />
+                      </div>
+                    </div>
+
+                    {/* 7. Deep Dive: Description, File, Path, Cmdline */}
                     <div className="col-span-full grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 bg-black/30 border-l-2 border-red-500/40 rounded-r-md px-5 py-4 mt-2">
 
                       {/* Description */}

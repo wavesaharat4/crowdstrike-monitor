@@ -6,7 +6,7 @@ import axios from 'axios';
 export async function getAnalysisFromExternalAI(alert: any) {
   const apiUrl = process.env.apiAi!; // ดึง URL ของ AI จาก .env.local
 
-  const safeId = alert.id || "00000000";
+  const safeId = alert.id;
 
   const payload = {
     inc_no: `INC-${String(safeId).substring(0, 8)}`,
@@ -29,11 +29,11 @@ export async function getAnalysisFromExternalAI(alert: any) {
 
     if (!response.data || response.data === "") {
         console.warn("⚠️ AI ระบบกลางไม่ตอบกลับ");
-        return null; // 🌟 คืนค่า null เพื่อไปเข้าลูป Retry
+        return null; // คืนค่า null เพื่อไปเข้าลูป Retry
     }
     return response.data;
   } catch (error: any) {
     console.error("--- External AI Error:", error.message);
-    return null; // 🌟 คืนค่า null เพื่อไปเข้าลูป Retry
+    return null; // คืนค่า null เพื่อไปเข้าลูป Retry
   }
 }

@@ -117,11 +117,11 @@ export async function fetchCrowdStrikeAlerts(): Promise<CrowdStrikeAlert[]> {
             }
         }
 
-        if (newAlerts.length > 0) {
-            console.log(`✅ พบ Alert ใหม่และบันทึกสำเร็จ: ${newAlerts.length} รายการ`);
-        } else {
-            console.log(`ℹ️ ไม่มี Alert ใหม่ (ข้อมูลซ้ำกับที่มีอยู่ใน Database แล้ว)`);
-        }
+        // if (newAlerts.length > 0) {
+        //     console.log(`✅ พบ Alert ใหม่และบันทึกสำเร็จ: ${newAlerts.length} รายการ`);
+        // } else {
+        //     console.log(`ℹ️ ไม่มี Alert ใหม่ `);
+        // }
 
         // ส่งคืนเฉพาะ Array ของใหม่เท่านั้น!
         return newAlerts;

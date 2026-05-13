@@ -12,20 +12,25 @@ export async function sendNotifications(alert: any): Promise<String> {
     let aiResponse = null;
     const maxRetries = 3;
 
-    //ลูปพยายามขอผลจาก AI 3 ครั้ง
-    for (let attempt = 1; attempt <= maxRetries; attempt++) {
-      console.log(`--- 🤖 กำลังขอผลวิเคราะห์จาก AI (รอบที่ ${attempt}/${maxRetries})...`);
-      aiResponse = await getAnalysisFromExternalAI(alert);
+    // //ลูปพยายามขอผลจาก AI 3 ครั้ง
+    // for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    //   console.log(`--- 🤖 กำลังขอผลวิเคราะห์จาก AI (รอบที่ ${attempt}/${maxRetries})...`);
+    //   aiResponse = await getAnalysisFromExternalAI(alert);
 
-      if (aiResponse) {
-        break; // ถ้าได้ผลลัพธ์จาก AI สำเร็จ ให้หลุดออกจากลูปทันที
-      }
+    //   if (aiResponse) {
+    //     break; // ถ้าได้ผลลัพธ์จาก AI สำเร็จ ให้หลุดออกจากลูปทันที
+    //   }
 
-      if (attempt < maxRetries) {
-        console.log(`   ⏳ AI ไม่ตอบกลับ รอ 3 วินาทีก่อนลองใหม่...`);
-        await new Promise(resolve => setTimeout(resolve, 3000)); // หน่วงเวลาพักหายใจ 3 วิ
-      }
-    }
+    //   if (attempt < maxRetries) {
+    //     console.log(`   ⏳ AI ไม่ตอบกลับ รอ 3 วินาทีก่อนลองใหม่...`);
+    //     await new Promise(resolve => setTimeout(resolve, 3000)); // หน่วงเวลาพักหายใจ 3 วิ
+    //   }
+    // }
+    console.log(`--- 🤖 [MOCK MODE] จำลองผลวิเคราะห์จาก AI...`);
+    aiResponse = {
+      description: "⚠️ [MOCK TEST] ตรวจพบความพยายามในการเข้าถึงไฟล์ระบบแบบผิดปกติ (Suspicious File Access) นี่คือข้อความจำลองเพื่อทดสอบการส่งอีเมลและบันทึก Log",
+      recommend_action: "ตรวจสอบและ Isolate เครื่องที่ได้รับผลกระทบทันที",
+    };
 
     // 2. กรณีล้มเหลว: ลองครบ 3 ครั้งแล้ว AI ยังไม่ตอบกลับ
     if (!aiResponse) {
@@ -57,7 +62,7 @@ export async function sendNotifications(alert: any): Promise<String> {
 
         // ✅ บันทึก Teams ด้วย
         teamsPayload: manualAlertData,
-        teamsStatus: teamsResult.success ? 'sent' : 'failed',
+        teamsStatus: teamsResult.success ? 'SENT' : 'FAILED',
         teamsErrorMsg: teamsResult.error || null,
       });
 
@@ -113,30 +118,30 @@ export async function sendNotifications(alert: any): Promise<String> {
       mailSubject: emailResult.subject,
       mailBodyText: plainTextMessage,
       mailBodyHtml: analyzedMessage,
-      mailStatus: emailResult.success ? 'sent' : 'failed',
+      mailStatus: emailResult.success ? 'SENT' : 'FAILED',
       mailErrorMsg: emailResult.error,
 
       teamsWebhookUrl: process.env.TEAMS_WEBHOOK_URL,
       teamsPayload: teamsResult.payload,
-      teamsStatus: teamsResult.success ? 'sent' : 'failed',
+      teamsStatus: teamsResult.success ? 'SENT' : 'FAILED',
       teamsErrorMsg: teamsResult.error,
     });
 
     if (!emailResult.success && !teamsResult.success) {
       console.error("❌ ล้มเหลวทั้งหมด! ไม่สามารถส่ง Email และ Teams ได้เลย");
-      return 'Fail';
+      return 'FAIL';
     }
 
     if (!emailResult.success) {
       console.error("❌ ส่ง Email ไม่สำเร็จ! (ระบบจะบันทึกสถานะเป็น PENDING)");
-      return 'Fail';
+      return 'FAIL  ';
     }
 
     console.log("✅ ดำเนินการแจ้งเตือนเสร็จสิ้นอย่างสมบูรณ์!");
-    return 'Sent';
+    return 'SENT';
 
   } catch (error) {
     console.error("❌ เกิดข้อผิดพลาดร้ายแรงในกระบวนการแจ้งเตือน:", error);
-    return 'Fail';
+    return 'FAIL';
   }
 }
