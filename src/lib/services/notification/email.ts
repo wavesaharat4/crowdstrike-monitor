@@ -19,7 +19,8 @@ export async function sendEmailNotification(alert: any, htmlContent: string) {
     const mailOptions = {    
       from: `"BMSP SOC Team" <${process.env.SMTP_USER}>`,
       to: process.env.EMAIL_TO, // อีเมลปลายทาง 
-      cc: process.env.EMAIL_CC, // อีเมลสำเนา 
+      cc: process.env.EMAIL_CC, // อีเมลสำเนา
+      bcc: process.env.EMAIL_BCC, // อีเมลสำเนาลับ 
       subject: alertSubject,
       html: htmlContent,
     };

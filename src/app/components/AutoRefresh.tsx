@@ -9,7 +9,7 @@ export default function AutoRefresh({ intervalMs = 60000 }: { intervalMs?: numbe
   useEffect(() => {
     // ตั้งเวลาให้สั่งรีเฟรชข้อมูลตามช่วงเวลาที่กำหนด (Default คือ 1 นาที หรือ 60,000 ms)
     const interval = setInterval(() => {
-      console.log('🔄 อัปเดตข้อมูลอัตโนมัติ...');
+      console.log('อัปเดตข้อมูลอัตโนมัติ...');
       router.refresh(); // สั่งให้ Next.js ไปดึงข้อมูลจาก Server Component ใหม่โดยไม่รีโหลดหน้าเว็บ
     }, intervalMs);
 

@@ -13,24 +13,24 @@ export async function sendNotifications(alert: any): Promise<String> {
     const maxRetries = 3;
 
     //ลูปพยายามขอผลจาก AI 3 ครั้ง
-    // for (let attempt = 1; attempt <= maxRetries; attempt++) {
-    //   console.log(`--- 🤖 กำลังขอผลวิเคราะห์จาก AI (รอบที่ ${attempt}/${maxRetries})...`);
-    //   aiResponse = await getAnalysisFromExternalAI(alert);
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      console.log(`--- 🤖 กำลังขอผลวิเคราะห์จาก AI (รอบที่ ${attempt}/${maxRetries})...`);
+      aiResponse = await getAnalysisFromExternalAI(alert);
 
-    //   if (aiResponse) {
-    //     break; // ถ้าได้ผลลัพธ์จาก AI สำเร็จ ให้หลุดออกจากลูปทันที
-    //   }
+      if (aiResponse) {
+        break; // ถ้าได้ผลลัพธ์จาก AI สำเร็จ ให้หลุดออกจากลูปทันที
+      }
 
-    //   if (attempt < maxRetries) {
-    //     console.log(`   ⏳ AI ไม่ตอบกลับ รอ 3 วินาทีก่อนลองใหม่...`);
-    //     await new Promise(resolve => setTimeout(resolve, 3000)); // หน่วงเวลาพักหายใจ 3 วิ
-    //   }
-    // }
-    console.log(`--- 🤖 [MOCK MODE] จำลองผลวิเคราะห์จาก AI...`);
-    aiResponse = {
-      description: "⚠️ [MOCK TEST] ตรวจพบความพยายามในการเข้าถึงไฟล์ระบบแบบผิดปกติ (Suspicious File Access) นี่คือข้อความจำลองเพื่อทดสอบการส่งอีเมลและบันทึก Log",
-      recommend_action: "ตรวจสอบและ Isolate เครื่องที่ได้รับผลกระทบทันที",
-    };
+      if (attempt < maxRetries) {
+        console.log(`   ⏳ AI ไม่ตอบกลับ รอ 3 วินาทีก่อนลองใหม่...`);
+        await new Promise(resolve => setTimeout(resolve, 3000)); // หน่วงเวลาพักหายใจ 3 วิ
+      }
+    }
+    // console.log(`--- 🤖 [MOCK MODE] จำลองผลวิเคราะห์จาก AI...`);
+    // aiResponse = {
+    //   description: "⚠️ [MOCK TEST] ตรวจพบความพยายามในการเข้าถึงไฟล์ระบบแบบผิดปกติ (Suspicious File Access) นี่คือข้อความจำลองเพื่อทดสอบการส่งอีเมลและบันทึก Log",
+    //   recommend_action: "ตรวจสอบและ Isolate เครื่องที่ได้รับผลกระทบทันที",
+    // };
 
     // 2. กรณีล้มเหลว: ลองครบ 3 ครั้งแล้ว AI ยังไม่ตอบกลับ
     if (!aiResponse) {

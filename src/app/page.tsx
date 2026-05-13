@@ -1,6 +1,3 @@
-import { processAlerts } from '@/lib/jobs/alertJob';
-import { revalidatePath } from 'next/cache';
-
 import AutoRefresh from './components/AutoRefresh';
 import LiveClock from './components/LiveClock';
 import { pool } from '@/lib/db';
@@ -41,7 +38,7 @@ export default async function DashboardPage() {
 
   return (
     <main className="min-h-screen bg-[#0b0f1a] text-slate-200 font-sans p-6 md:p-10">
-      <AutoRefresh intervalMs={1500} />
+      <AutoRefresh intervalMs={15000} />
       <div className="fixed inset-0 pointer-events-none z-0 [background-image:linear-gradient(rgba(148,163,184,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.025)_1px,transparent_1px)] [background-size:48px_48px]" />
       <div className="fixed top-0 left-0 right-0 h-[3px] z-10 bg-gradient-to-r from-transparent via-red-500 to-transparent" />
 

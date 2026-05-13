@@ -1,12 +1,6 @@
 import { fetchCrowdStrikeAlerts } from '../services/crowdstrike';
-// import { sendEmailNotification } from '../services/notification/email';
-// import { sendToTeams } from '../services/notification/teams';
-// import { sendNotifications } from '../services/notification/index';
-import { getAnalysisFromExternalAI } from '../services/notification/ai-service';
 import { pool } from '../../lib/db';
 import { sendNotifications } from '../services/notification/index';
-
-const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export async function processAlerts() {
     console.log(`\n==================================================`);

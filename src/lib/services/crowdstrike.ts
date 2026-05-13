@@ -6,7 +6,7 @@ import { pool } from '@/lib/db'; //  นำเข้า Database
 
 dotenv.config();
 
-// 1. ฟังก์ชันขอ Token (เหมือนเดิม)
+// 1. ฟังก์ชันขอ Token 
 async function getAccessToken(): Promise<string> {
     const credentials = Buffer.from(`${process.env.CS_CLIENT_ID}:${process.env.CS_CLIENT_SECRET}`).toString('base64');
     const response = await axios.post(
@@ -25,7 +25,7 @@ export async function fetchCrowdStrikeAlerts(): Promise<CrowdStrikeAlert[]> {
         // 1: ค้นหา ID ของ Alert 
         const queryResponse = await axios.get(`${process.env.CS_BASE_URL}/alerts/queries/alerts/v2`, {
             headers: { 'Authorization': `Bearer ${token}` },
-            params: { filter: "severity:>=60", limit: 1 }
+            params: { filter: "severity:>=60", limit: 5 }
         });
 
         const alertIds = queryResponse.data.resources;
@@ -34,7 +34,7 @@ export async function fetchCrowdStrikeAlerts(): Promise<CrowdStrikeAlert[]> {
             return [];
         }
 
-        // 2: ดึงรายละเอียดเต็มๆ
+        // 2: ดึงรายละเอียดเต็มของ Alert โดยใช้ ID ที่ได้มา
         const detailsResponse = await axios.post(`${process.env.CS_BASE_URL}/alerts/entities/alerts/v2`,
             { composite_ids: alertIds },
             {

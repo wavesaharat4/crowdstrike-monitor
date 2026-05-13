@@ -1,7 +1,7 @@
 import cron from 'node-cron';
 import { processAlerts } from './alertJob';
 
-// ตัวแปรกันการรันซ้ำซ้อนเวลา Next.js รีโหลดหน้าตอนกำลังเขียนโค้ด (Dev mode)
+// ตัวแปรกันการรันซ้ำซ้อนเวลา Next.js 
 let isSchedulerRunning = false;
 
 export function startScheduler() {
