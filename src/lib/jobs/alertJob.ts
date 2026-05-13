@@ -37,7 +37,7 @@ export async function processAlerts() {
             const pendingAlerts = pendingResult.rows;
         
             if (pendingAlerts.length === 0) {
-                console.log(`ℹ️ ไม่มี Alert ค้างส่งในระบบรอบนี้`);
+                console.log(`ไม่มี Alert ค้างส่งในระบบรอบนี้`);
                 return;
             }
         
@@ -57,13 +57,13 @@ export async function processAlerts() {
                         // เปลี่ยนมารับค่า $1 เป็นสถานะ และ $2 เป็น id
                         const updateQuery = `UPDATE "AlertRecord" SET "mailStatus" = $1 WHERE id = $2`;
                         await pool.query(updateQuery, [success, dbAlert.id]);
-                        console.log(`      ✅ อัปเดต Mail Status เป็น ${success} เรียบร้อย`);
+                        console.log(`อัปเดต Mail Status เป็น ${success} เรียบร้อย`);
                     } catch (dbError: any) {
-                        console.error(`      ❌ อัปเดตสถานะ DB ไม่สำเร็จ:`, dbError.message);
+                        console.error(`อัปเดตสถานะ DB ไม่สำเร็จ:`, dbError.message);
                     }
                 } else {
                     // กรณีเป็น PENDING หรือค่าอื่นๆ คือเมลไม่ไปและไม่ได้ส่ง Teams 
-                    console.log(`      ⚠️ ระบบเก็บสถานะไว้เป็น PENDING เพื่อดำเนินการใหม่ในรอบหน้า`);
+                    console.log(`ระบบเก็บสถานะไว้เป็น PENDING เพื่อดำเนินการใหม่ในรอบหน้า`);
                 }
             }
 

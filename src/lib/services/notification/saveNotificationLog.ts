@@ -46,6 +46,6 @@ export async function saveNotificationLog(data: NotificationLogData) {
     await pool.query(query, values);
 
   } catch (error) {
-    console.error("❌ saveNotificationLog error:", error);
+    console.error("saveNotificationLog error:", error);
   }
 }

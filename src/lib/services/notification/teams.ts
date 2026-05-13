@@ -17,7 +17,7 @@ export async function sendToTeams(alert: any, aiResponse: any) {
     };
   }
 
-  // 🌟 จัดฟอร์แมตหน้าตาการ์ดที่จะไปเด้งใน Teams (MessageCard)
+  // จัดฟอร์แมตหน้าตาการ์ดที่จะไปเด้งใน Teams (MessageCard)
   const payload = {
     "@type": "MessageCard",
     "@context": "http://schema.org/extensions",
@@ -37,7 +37,7 @@ export async function sendToTeams(alert: any, aiResponse: any) {
           },
           {
             "name": "🛠️ คำแนะนำ (Action):",
-            // 💡 ทริค: ใน Teams จะใช้ \n ในการขึ้นบรรทัดใหม่แทน <br> ของอีเมล เลยต้องแปลงค่ากันนิดนึงครับ
+            // ใน Teams จะใช้ \n ในการขึ้นบรรทัดใหม่แทน <br> ของอีเมล เลยต้องแปลงค่ากันนิดนึงครับ
             "value": aiResponse.recommend_action ? aiResponse.recommend_action.replace(/<br>/g, '\n\n') : "ไม่มีคำแนะนำ"
           }
         ],
@@ -50,7 +50,7 @@ export async function sendToTeams(alert: any, aiResponse: any) {
 
     await axios.post(webhookUrl, payload);
 
-    console.log("✅ ส่ง Teams สำเร็จ");
+    console.log("ส่ง Teams สำเร็จ");
 
     return {
       success: true,
@@ -60,7 +60,7 @@ export async function sendToTeams(alert: any, aiResponse: any) {
 
   } catch (error: any) {
 
-    console.error("❌ Teams Error:", error.message);
+    console.error("Teams Error:", error.message);
 
     return {
       success: false,

@@ -113,21 +113,14 @@ export async function fetchCrowdStrikeAlerts(): Promise<CrowdStrikeAlert[]> {
                     newAlerts.push(alert);
                 }
             } catch (dbError) {
-                console.error(`❌ เกิดข้อผิดพลาดตอนบันทึก Alert ID: ${alert.detection_id}`, dbError);
+                console.error(`เกิดข้อผิดพลาดตอนบันทึก Alert ID: ${alert.detection_id}`, dbError);
             }
         }
-
-        // if (newAlerts.length > 0) {
-        //     console.log(`✅ พบ Alert ใหม่และบันทึกสำเร็จ: ${newAlerts.length} รายการ`);
-        // } else {
-        //     console.log(`ℹ️ ไม่มี Alert ใหม่ `);
-        // }
-
         // ส่งคืนเฉพาะ Array ของใหม่เท่านั้น!
         return newAlerts;
 
     } catch (error) {
-        console.error('❌ Error fetching alerts from CrowdStrike:', error);
+        console.error('Error fetching alerts from CrowdStrike:', error);
         return [];
     }
 }

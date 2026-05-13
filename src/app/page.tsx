@@ -1,6 +1,6 @@
 import { processAlerts } from '@/lib/jobs/alertJob';
 import { revalidatePath } from 'next/cache';
-import TriggerButton from './components/TriggerButton';
+
 import AutoRefresh from './components/AutoRefresh';
 import LiveClock from './components/LiveClock';
 import { pool } from '@/lib/db';
@@ -39,16 +39,9 @@ export default async function DashboardPage() {
   `);
   const allAlerts = result.rows;
 
-  async function runManualCheck() {
-    'use server';
-    console.log("Manual check triggered by user");
-    await processAlerts();
-    revalidatePath('/');
-  }
-
   return (
     <main className="min-h-screen bg-[#0b0f1a] text-slate-200 font-sans p-6 md:p-10">
-      <AutoRefresh intervalMs={4000} />
+      <AutoRefresh intervalMs={1500} />
       <div className="fixed inset-0 pointer-events-none z-0 [background-image:linear-gradient(rgba(148,163,184,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.025)_1px,transparent_1px)] [background-size:48px_48px]" />
       <div className="fixed top-0 left-0 right-0 h-[3px] z-10 bg-gradient-to-r from-transparent via-red-500 to-transparent" />
 
@@ -83,9 +76,6 @@ export default async function DashboardPage() {
 
           <div className="flex flex-wrap items-center gap-4">
             <LiveClock />
-            <div className="flex-shrink-0 pt-1">
-              <TriggerButton action={runManualCheck} />
-            </div>
           </div>
         </header>
 
@@ -114,9 +104,6 @@ export default async function DashboardPage() {
               <h2 className="font-bold text-base text-slate-100 tracking-tight">
                 Latest Security Events
               </h2>
-              <span className="text-[9px] text-cyan-400 tracking-[0.2em] uppercase font-bold font-mono bg-cyan-400/[0.07] border border-cyan-400/[0.18] px-3 py-1 rounded">
-                ● DB Records
-              </span>
             </div>
 
             {allAlerts.length === 0 ? (

@@ -12,7 +12,7 @@ export async function sendNotifications(alert: any): Promise<String> {
     let aiResponse = null;
     const maxRetries = 3;
 
-    // //ลูปพยายามขอผลจาก AI 3 ครั้ง
+    //ลูปพยายามขอผลจาก AI 3 ครั้ง
     // for (let attempt = 1; attempt <= maxRetries; attempt++) {
     //   console.log(`--- 🤖 กำลังขอผลวิเคราะห์จาก AI (รอบที่ ${attempt}/${maxRetries})...`);
     //   aiResponse = await getAnalysisFromExternalAI(alert);
@@ -34,11 +34,11 @@ export async function sendNotifications(alert: any): Promise<String> {
 
     // 2. กรณีล้มเหลว: ลองครบ 3 ครั้งแล้ว AI ยังไม่ตอบกลับ
     if (!aiResponse) {
-      console.warn("⚠️ ล้มเหลว: AI ไม่ตอบสนองหลังจากลอง 3 ครั้ง! -> ข้ามอีเมล และส่งเตือน Teams");
+      console.warn("ล้มเหลว: AI ไม่ตอบสนองหลังจากลอง 3 ครั้ง! -> ข้ามอีเมล และส่งเตือน Teams");
 
       // ปั้นข้อมูลฉุกเฉินเพื่อส่งไปโชว์ใน Teams
       const manualAlertData = {
-        short_summary: `❌ AI System Failure (Alert: ${alert.hostname})`,
+        short_summary: `AI System Failure (Alert: ${alert.hostname})`,
         description: `ระบบพยายามให้ AI วิเคราะห์ข้อมูล 3 ครั้งแต่ไม่สำเร็จ จึงข้ามการส่งอีเมลอัตโนมัติ`,
         recommend_action: `🚨 **กรุณาดำเนินการส่ง Email แจ้งเตือนลูกค้าแบบ Manual**\n\n**ข้อมูลเบื้องต้น:**\n- Severity: ${alert.severity || 'High'}\n- IP: ${alert.ipAddress}\n- User: ${alert.username}\n- Desc: ${alert.description}`
       };
@@ -49,6 +49,7 @@ export async function sendNotifications(alert: any): Promise<String> {
         alertId: alert.id,
 
         toEmails: [process.env.EMAIL_TO || ''],
+        ccEmails: [process.env.EMAIL_CC || ''],
 
         mailSubject: '[MANUAL] AI Fail',
         mailBodyText: 'AI ไม่ตอบกลับ ระบบไม่ได้ส่ง Email อัตโนมัติ',
@@ -60,24 +61,24 @@ export async function sendNotifications(alert: any): Promise<String> {
 
         teamsWebhookUrl: process.env.TEAMS_WEBHOOK_URL,
 
-        // ✅ บันทึก Teams ด้วย
+        // บันทึก Teams 
         teamsPayload: manualAlertData,
         teamsStatus: teamsResult.success ? 'SENT' : 'FAILED',
         teamsErrorMsg: teamsResult.error || null,
       });
 
       if (!teamsResult.success) {
-        console.error("❌ ล้มเหลวซ้ำซ้อน! ไม่สามารถส่งแจ้งเตือน Manual เข้า Teams ได้");
-        // 🌟 ถ้าส่ง Teams ไม่ผ่านด้วย ให้คืนค่า PENDING เพื่อรอให้รอบหน้ามาลองใหม่
+        console.error("ล้มเหลวซ้ำซ้อน! ไม่สามารถส่งแจ้งเตือน Manual เข้า Teams ได้");
+        //ถ้าส่ง Teams ไม่ผ่านด้วย ให้คืนค่า PENDING เพื่อรอให้รอบหน้ามาลองใหม่
         return 'PENDING';
       }
 
-      console.log("✅ ส่งแจ้งเตือน Manual เข้า Teams สำเร็จ ");
-      // 🌟 คืนค่า 'FAIL' กลับไปให้อัปเดต DB (คนจะได้รู้ว่าเคสนี้ต้องมาทำ Manual)
+      console.log("ส่งแจ้งเตือน Manual เข้า Teams สำเร็จ ");
+      //คืนค่า 'FAIL' กลับไปให้อัปเดต DB 
       return 'FAIL';
     }
 
-    // 3. กรณีสำเร็จ: AI ตอบกลับมาปกติ (ทำงาน Flow เดิม)
+    // 3. กรณีสำเร็จ: AI ตอบกลับมาปกติ 
     const analyzedMessage = `
       <div style="font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-size: 14px; color: #000000; line-height: 1.5;">
         <p>Dear SVI Teams ,</p>
@@ -114,6 +115,7 @@ export async function sendNotifications(alert: any): Promise<String> {
       alertId: alert.id,
 
       toEmails: [process.env.EMAIL_TO || ''],
+      ccEmails: [process.env.EMAIL_CC || ''],
 
       mailSubject: emailResult.subject,
       mailBodyText: plainTextMessage,
@@ -128,20 +130,20 @@ export async function sendNotifications(alert: any): Promise<String> {
     });
 
     if (!emailResult.success && !teamsResult.success) {
-      console.error("❌ ล้มเหลวทั้งหมด! ไม่สามารถส่ง Email และ Teams ได้เลย");
+      console.error("ล้มเหลวทั้งหมด! ไม่สามารถส่ง Email และ Teams ได้เลย");
       return 'FAIL';
     }
 
     if (!emailResult.success) {
-      console.error("❌ ส่ง Email ไม่สำเร็จ! (ระบบจะบันทึกสถานะเป็น PENDING)");
+      console.error("ส่ง Email ไม่สำเร็จ! ระบบจะบันทึกสถานะเป็น PENDING");
       return 'FAIL  ';
     }
 
-    console.log("✅ ดำเนินการแจ้งเตือนเสร็จสิ้นอย่างสมบูรณ์!");
+    console.log("ดำเนินการแจ้งเตือนเสร็จสิ้นอย่างสมบูรณ์!");
     return 'SENT';
 
   } catch (error) {
-    console.error("❌ เกิดข้อผิดพลาดร้ายแรงในกระบวนการแจ้งเตือน:", error);
+    console.error("เกิดข้อผิดพลาดร้ายแรงในกระบวนการแจ้งเตือน:", error);
     return 'FAIL';
   }
 }

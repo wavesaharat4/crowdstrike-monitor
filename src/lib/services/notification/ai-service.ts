@@ -28,7 +28,7 @@ export async function getAnalysisFromExternalAI(alert: any) {
     const response = await axios.post(apiUrl, payload);
 
     if (!response.data || response.data === "") {
-        console.warn("⚠️ AI ระบบกลางไม่ตอบกลับ");
+        console.warn("AI ไม่ตอบกลับ");
         return null; // คืนค่า null เพื่อไปเข้าลูป Retry
     }
     return response.data;
