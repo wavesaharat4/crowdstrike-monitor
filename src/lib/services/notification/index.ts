@@ -1,6 +1,8 @@
 import { sendEmailNotification } from '../notification/email';
 import { sendToTeams } from '../notification/teams';
 import { getAnalysisFromExternalAI } from '../notification/ai-service';
+import { saveNotificationLog } from './saveNotificationLog';
+import { NotificationLogData } from '@/lib/types/notification';
 
 // ---------------------------------------------------------
 //ฟังก์ชันหลัก (คุมการทำงานทั้งหมด)
@@ -33,21 +35,41 @@ export async function sendNotifications(alert: any): Promise<String> {
       const manualAlertData = {
         short_summary: `❌ AI System Failure (Alert: ${alert.hostname})`,
         description: `ระบบพยายามให้ AI วิเคราะห์ข้อมูล 3 ครั้งแต่ไม่สำเร็จ จึงข้ามการส่งอีเมลอัตโนมัติ`,
-        recommend_action: `🚨 **กรุณาดำเนินการส่ง Email แจ้งเตือนลูกค้าแบบ Manual (ทำมือ)**\n\n**ข้อมูลเบื้องต้น:**\n- Severity: ${alert.severity || 'High'}\n- IP: ${alert.ipAddress}\n- User: ${alert.username}\n- Desc: ${alert.description}`
+        recommend_action: `🚨 **กรุณาดำเนินการส่ง Email แจ้งเตือนลูกค้าแบบ Manual**\n\n**ข้อมูลเบื้องต้น:**\n- Severity: ${alert.severity || 'High'}\n- IP: ${alert.ipAddress}\n- User: ${alert.username}\n- Desc: ${alert.description}`
       };
 
       // ส่งแค่ Teams ช่องทางเดียว
-      const teamsSuccess = await sendToTeams(alert, manualAlertData);
-      
-      if (!teamsSuccess) {
+      const teamsResult = await sendToTeams(alert, manualAlertData);
+      await saveNotificationLog({
+        alertId: alert.id,
+
+        toEmails: [process.env.EMAIL_TO || ''],
+
+        mailSubject: '[MANUAL] AI Fail',
+        mailBodyText: 'AI ไม่ตอบกลับ ระบบไม่ได้ส่ง Email อัตโนมัติ',
+        mailBodyHtml: '<p>AI ไม่ตอบกลับ ระบบไม่ได้ส่ง Email อัตโนมัติ</p>',
+
+        //  ไม่มีการส่งเมล
+        mailStatus: 'failed',
+        mailErrorMsg: 'AI ไม่ตอบกลับหลัง retry 3 ครั้ง',
+
+        teamsWebhookUrl: process.env.TEAMS_WEBHOOK_URL,
+
+        // ✅ บันทึก Teams ด้วย
+        teamsPayload: manualAlertData,
+        teamsStatus: teamsResult.success ? 'sent' : 'failed',
+        teamsErrorMsg: teamsResult.error || null,
+      });
+
+      if (!teamsResult.success) {
         console.error("❌ ล้มเหลวซ้ำซ้อน! ไม่สามารถส่งแจ้งเตือน Manual เข้า Teams ได้");
         // 🌟 ถ้าส่ง Teams ไม่ผ่านด้วย ให้คืนค่า PENDING เพื่อรอให้รอบหน้ามาลองใหม่
-        return 'PENDING'; 
+        return 'PENDING';
       }
 
       console.log("✅ ส่งแจ้งเตือน Manual เข้า Teams สำเร็จ ");
       // 🌟 คืนค่า 'FAIL' กลับไปให้อัปเดต DB (คนจะได้รู้ว่าเคสนี้ต้องมาทำ Manual)
-      return 'FAIL'; 
+      return 'FAIL';
     }
 
     // 3. กรณีสำเร็จ: AI ตอบกลับมาปกติ (ทำงาน Flow เดิม)
@@ -76,27 +98,45 @@ export async function sendNotifications(alert: any): Promise<String> {
     `;
 
     console.log(`--- กำลังส่งผลวิเคราะห์เข้า Email และ Teams...`);
+    const plainTextMessage = `ตรวจพบเหตุการณ์ความเสี่ยงระดับ ${alert.severity || 'High'} เครื่อง: ${alert.hostname}
+                            IP: ${alert.ipAddress} User: ${alert.username} รายละเอียด: ${aiResponse.description || 'ไม่มีข้อมูล'} คำแนะนำ: ${aiResponse.recommend_action || 'ไม่มี'}`;
 
-    const [emailSuccess, teamsSuccess] = await Promise.all([
+    const [emailResult, teamsResult] = await Promise.all([
       sendEmailNotification(alert, analyzedMessage),
       sendToTeams(alert, aiResponse)
     ]);
+    await saveNotificationLog({
+      alertId: alert.id,
 
-    if (!emailSuccess && !teamsSuccess) {
+      toEmails: [process.env.EMAIL_TO || ''],
+
+      mailSubject: emailResult.subject,
+      mailBodyText: plainTextMessage,
+      mailBodyHtml: analyzedMessage,
+      mailStatus: emailResult.success ? 'sent' : 'failed',
+      mailErrorMsg: emailResult.error,
+
+      teamsWebhookUrl: process.env.TEAMS_WEBHOOK_URL,
+      teamsPayload: teamsResult.payload,
+      teamsStatus: teamsResult.success ? 'sent' : 'failed',
+      teamsErrorMsg: teamsResult.error,
+    });
+
+    if (!emailResult.success && !teamsResult.success) {
       console.error("❌ ล้มเหลวทั้งหมด! ไม่สามารถส่ง Email และ Teams ได้เลย");
-      return 'Fail'; 
+      return 'Fail';
     }
 
-    if (!emailSuccess) {
+    if (!emailResult.success) {
       console.error("❌ ส่ง Email ไม่สำเร็จ! (ระบบจะบันทึกสถานะเป็น PENDING)");
-      return 'Fail'; 
+      return 'Fail';
     }
 
     console.log("✅ ดำเนินการแจ้งเตือนเสร็จสิ้นอย่างสมบูรณ์!");
-    return 'Sent'; 
+    return 'Sent';
 
   } catch (error) {
     console.error("❌ เกิดข้อผิดพลาดร้ายแรงในกระบวนการแจ้งเตือน:", error);
-    return 'Fail'; 
+    return 'Fail';
   }
 }

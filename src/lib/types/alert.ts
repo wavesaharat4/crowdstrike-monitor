@@ -16,6 +16,4 @@ export interface CrowdStrikeAlert {
     sha256: string;
     disposition: string;
     macAddress: string;
-
-    customer_message : string; // เพิ่มฟิลด์นี้เพื่อเก็บข้อความที่ AI สรุปให้ลูกค้า
 }

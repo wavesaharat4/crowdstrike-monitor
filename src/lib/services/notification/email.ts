@@ -16,19 +16,33 @@ export async function sendEmailNotification(alert: any, htmlContent: string) {
       },
     });
 
+    const alertSubject = `🚨 [Alert] ตรวจพบเหตุการณ์ความเสี่ยงระดับ ${alert.severity || 'High'} บน ${alert.hostname}`;
     const mailOptions = {
       // 💡 สามารถแต่งชื่อผู้ส่งให้ดูเป็นทางการขึ้นได้ตรงนี้
       from: `"BMSP SOC Team" <${process.env.SMTP_USER}>`,
       to: process.env.EMAIL_TO, // อีเมลปลายทาง 
-      subject: `🚨 [Alert] ตรวจพบเหตุการณ์ความเสี่ยงระดับ ${alert.severity || 'High'} บน ${alert.hostname}`,
+      subject: alertSubject,
       html: htmlContent,
     };
 
     const info = await transporter.sendMail(mailOptions);
     console.log("✅ ส่ง Email ผ่าน SMTP สำเร็จ! Message ID:", info.messageId);
-    return true;
+     return {
+      success: true,
+      messageId: info.messageId,
+      subject: alertSubject,
+      error: null,
+    };
+
   } catch (error: any) {
+
     console.error("❌ Email Sending Error:", error.message);
-    return false;
+
+    return {
+      success: false,
+      messageId: null,
+      subject: null,
+      error: error.message,
+    };
   }
 }

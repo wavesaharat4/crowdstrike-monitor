@@ -9,9 +9,12 @@ export async function sendToTeams(alert: any, aiResponse: any) {
   const webhookUrl = process.env.TEAMS_WEBHOOK_URL;
 
   // ถ้าไม่ได้ตั้งค่า URL ไว้ ให้ข้ามการทำงานไปเลย ระบบจะได้ไม่พัง
-  if (!webhookUrl) {
-    console.log("⚠️ ไม่พบ TEAMS_WEBHOOK_URL ในระบบ ข้ามการส่งเข้า MS Teams");
-    return false;
+ if (!webhookUrl) {
+    return {
+      success: false,
+      payload: null,
+      error: 'No webhook url'
+    };
   }
 
   // 🌟 จัดฟอร์แมตหน้าตาการ์ดที่จะไปเด้งใน Teams (MessageCard)
@@ -44,12 +47,25 @@ export async function sendToTeams(alert: any, aiResponse: any) {
   };
 
   try {
-    console.log(`--- 💬 กำลังส่งแจ้งเตือนเข้า MS Teams...`);
+
     await axios.post(webhookUrl, payload);
-    console.log("✅ ส่งเข้า MS Teams สำเร็จ!");
-    return true;
+
+    console.log("✅ ส่ง Teams สำเร็จ");
+
+    return {
+      success: true,
+      payload,
+      error: null
+    };
+
   } catch (error: any) {
-    console.error("❌ ส่งเข้า MS Teams ล้มเหลว:", error.message);
-    return false;
+
+    console.error("❌ Teams Error:", error.message);
+
+    return {
+      success: false,
+      payload,
+      error: error.message
+    };
   }
 }
